@@ -1,35 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Test from './components/Test/Test';
+
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import './index.css';
+
+import reportWebVitals from './reportWebVitals';
+import Test from './components/Test/Test';
+import BaseContainer from './components/BaseContainer/BaseContainer';
+import MainHeader from './components/MainHeader/MainHeader';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-      />
-
-
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      />
-
-    </head>
+    <MainHeader/>
+    <BaseContainer>
+      <Test />
+    </BaseContainer>
     {/* <App /> */}
-    <Test />
   </React.StrictMode>
 );
 
