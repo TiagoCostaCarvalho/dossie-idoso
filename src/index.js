@@ -9,19 +9,30 @@ import '@fontsource/roboto/700.css';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import Test from './components/Test/Test';
-import BaseContainer from './components/BaseContainer/BaseContainer';
-import MainHeader from './components/MainHeader/MainHeader';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import MainPage from './pages/HomePage';
+import NewTopic from './pages/NewTopic';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainPage/>,
+  },
+  {
+    path: "/new-topic/",
+    element: <NewTopic/>,
+  }
+]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MainHeader/>
-    <BaseContainer>
-      <Test />
-    </BaseContainer>
-    {/* <App /> */}
+    <RouterProvider router={router} />  
   </React.StrictMode>
 );
 
