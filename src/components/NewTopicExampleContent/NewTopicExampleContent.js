@@ -3,6 +3,7 @@ import './NewTopicExampleContent.css';
 import React, { useCallback, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import CardImpl from 'components/CardImpl/CardImpl';
+import { Box } from '@mui/material';
 
 function NewTopicExampleContent(props) {
 
@@ -18,7 +19,7 @@ function NewTopicExampleContent(props) {
   useEffect(() => {console.log({newTopic, entries})}, [newTopic, entries]);
   
   return (
-    <div className='NewTopicExampleContent'>
+    <Box className='NewTopicExampleContent'>
       <header className='Section Bottom-Bordered'>
         <div style={{backgroundImage: newTopic.bannerUrl ? `url(${newTopic.bannerUrl})` : "linear-gradient(to right, #6750A4, #ffffff)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundColor: "#6750A4", minHeight: "300px", backgroundPosition: "center",
           display: "flex",
@@ -61,7 +62,7 @@ function NewTopicExampleContent(props) {
         <ButtonWithDisable label="Crie uma entrada no tópico agora!" isDisabled={false} onClick={(e) => newEntryOnClick()}/>
         {/* <img src='https://www.w3schools.com/images/w3schools_green.jpg'/> */}
       </section>
-    </div>
+    </Box>
   );
 }
 

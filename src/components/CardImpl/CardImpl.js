@@ -15,10 +15,10 @@ import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 export default function CardImpl(props) {
-    //props tem: title, description, imgUrl, imgAlt
+    //props tem: title, description, imgUrl, imgAlt, cardWidth
 
   return (
-    <Card sx={{ maxWidth: "30%" }}>
+    <Card >
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
