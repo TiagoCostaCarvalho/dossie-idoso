@@ -3,25 +3,21 @@ import './NewTopicContent.css';
 import { FormControl, InputLabel, Select, MenuItem, TextField, Input, Box, Button, InputAdornment} from '@mui/material';
 import CancelIcon from 'components/Icons/CancelIcon/CancelIcon';
 import TextFieldWithDelete from 'components/TextFieldWithDelete/TextFieldWithDelete';
-import React, { useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function NewTopicContent() {
+
+  const navigate = useNavigate();
 
   const [name, setName] = React.useState('');
   const [description, setDescription] = React.useState('');
   const [category, setCategory] = React.useState('');
-  
+  const [bannerUrl, setBannerUrl] = React.useState('');
+
   const isButtonDisabled = useMemo(() => {
     return !name || !description || !category;
   }, [name, description, category])
-
-  const handleNameChange = (event) => {
-    setName(event.target.value);
-  };
-
-  const handleDescriptionChange = (event) => {
-    setDescription(event.target.value);
-  };
 
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
@@ -34,6 +30,12 @@ function NewTopicContent() {
   },
   //se algum desses valores mudar
   [category, name]);
+
+  const submitAction = useCallback(() => {
+    const newTopic = {name, description, category, bannerUrl};
+    localStorage.setItem("newTopic", JSON.stringify(newTopic));
+    navigate("/new-topic/example");
+  }, [name, description, category, bannerUrl]);
 
   return (
     <Box className="NewTopicContent" component="form">
@@ -63,7 +65,12 @@ function NewTopicContent() {
         </Select>
       </FormControl>
 
-      <ButtonWithDisable label="Criar tópico" isDisabled={isButtonDisabled} />
+      <FormControl variant="outlined" sx={{ minWidth: 120, gap: "12px" }}>
+        <TextFieldWithDelete required={false} value={bannerUrl} setValue={setBannerUrl} label="Link (URL) do banner" />
+      </FormControl>
+
+
+      <ButtonWithDisable label="Criar tópico" isDisabled={isButtonDisabled} onClick={(e) => {submitAction()}} />
 
     </Box>
   );
