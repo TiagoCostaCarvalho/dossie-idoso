@@ -21,6 +21,7 @@ import MainPage from './pages/HomePage';
 import NewTopic from './pages/NewTopic';
 import NewTopicExample from 'pages/NewTopicExample';
 import NewEntry from 'pages/NewEntry';
+import RegisterAccount from 'views/pages/authentication/register_account';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
     path: "/new-topic/example/new-entry",
     element: <NewEntry/>,
   },
+  {
+    path: "/signup",
+    element: <RegisterAccount />,
+  }
 ]);
 
 
