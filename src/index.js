@@ -19,6 +19,8 @@ import {
 } from "react-router-dom";
 import MainPage from './pages/HomePage';
 import NewTopic from './pages/NewTopic';
+import NewTopicExample from 'pages/NewTopicExample';
+import NewEntry from 'pages/NewEntry';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,15 @@ const router = createBrowserRouter([
   {
     path: "/new-topic/",
     element: <NewTopic/>,
-  }
+  },
+  {
+    path: "/new-topic/example",
+    element: <NewTopicExample/>,
+  },
+  {
+    path: "/new-topic/example/new-entry",
+    element: <NewEntry/>,
+  },
 ]);
 
 

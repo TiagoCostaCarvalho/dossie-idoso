@@ -11,7 +11,7 @@ function TextFieldWithDelete(props) {
   };
 
   return (
-    <TextField required label={props.label} variant="outlined" value={props.value} onChange={handleValueChange}
+    <TextField required={props.required != null ? props.required : false} label={props.label} variant="outlined" value={props.value} onChange={handleValueChange}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end" onClick={(e) => {props.setValue('')}}>
