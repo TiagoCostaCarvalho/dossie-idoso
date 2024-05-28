@@ -1,16 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-
 import VLibras from '@djpfs/react-vlibras'
 
-const defaultTheme = createTheme();
 
 function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <CssBaseline />
       <div className="App">
         <VLibras />
         <header className="App-header">
@@ -28,8 +22,6 @@ function App() {
           </a>
         </header>
       </div>
-    </ThemeProvider>
-
   );
 }
 
