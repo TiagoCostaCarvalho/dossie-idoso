@@ -95,7 +95,7 @@ function RegisterAccount() {
     }
 
     return (
-        <Container>
+        <Container sx={{padding:15}}>
         <Box component="form" onSubmit={handleSubmit} noValidate>
             <div >
                 <Typography variant="h4" align="center">Criar Conta</Typography>
@@ -203,7 +203,7 @@ function RegisterAccount() {
                 />
             </FormControl>
 
-            <Button type="submit" variant="contained" color="primary" fullWidth disabled={hasErrors}>
+            <Button type="submit" variant="contained" color="primary" fullWidth   disabled={hasErrors}>
                 Criar conta
             </Button>
                 
