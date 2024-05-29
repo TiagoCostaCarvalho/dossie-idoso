@@ -4,6 +4,7 @@ import { TextField, Button, Box, FormControl, InputAdornment, IconButton } from 
 import ClearIcon from '@mui/icons-material/Clear';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useNavigate } from "react-router-dom";
 
 const registerSchema = z.object({
     name: z.string().nonempty({ message: 'O nome é requerido' }),
@@ -16,6 +17,8 @@ const registerSchema = z.object({
 });
 
 function RegisterAccount() {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -65,12 +68,10 @@ function RegisterAccount() {
         if (validation.success) {
             setErrors((prev) => ({ ...prev, [name]: '' }));
             setHasErrors(false);
-            console.log("sucess ", errors);
         } else {
             const newErrors = validation.error.flatten().fieldErrors;
             setErrors((prev) => ({ ...prev, [name]: newErrors[name]?.[0] || '' }));
             setHasErrors(true);
-            console.log("error ", validation.error.issues);
         }
     };
 
@@ -85,9 +86,10 @@ function RegisterAccount() {
 
         const validation = registerSchema.safeParse(formData);
         if (validation.success) {
-            console.log('Form submitted successfully:', validation.data);
+            localStorage.setItem("user", formData.name);
+            navigate("/success-signup");
         } else {
-            console.log('Form with errors:', errors);
+            console.log("Erro ao preencher os dados");
         }
     }
 
