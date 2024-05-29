@@ -21,7 +21,7 @@ import MainPage from './pages/HomePage';
 import NewTopic from './pages/NewTopic';
 import NewTopicExample from 'pages/NewTopicExample';
 import NewEntry from 'pages/NewEntry';
-import RegisterAccount from 'views/pages/authentication/register_account/index';
+import RegisterAccount from 'views/pages/authentication/register_account/register-account';
 import SuccessRegisterAccount from 'views/pages/authentication/register_account/SuccessRegisterAccount';
 import LoginAccount from 'views/pages/authentication/login-account/login-account';
 

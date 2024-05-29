@@ -35,14 +35,6 @@ function LoginAccount() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => {
-            if (name === 'password') {
-                return {
-                    ...prev,
-                    [name]: value,
-                    confirmPassword: '',
-                }
-            }
-
             return {
                 ...prev,
                 [name]: value,
@@ -73,7 +65,7 @@ function LoginAccount() {
         const validation = loginSchema.safeParse(formData);
         if (validation.success) {
             localStorage.setItem("user", formData.name);
-            navigate("/login");
+            navigate("/");
         } else {
             console.log("Erro ao preencher os dados");
         }
