@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { z } from "zod";
-import { TextField, Button, Box, FormControl, InputAdornment, IconButton } from '@mui/material';
+import { TextField, Button, Box, FormControl, InputAdornment, IconButton , Typography, Container, Card} from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
 
 const registerSchema = z.object({
     name: z.string().nonempty({ message: 'O nome é requerido' }),
@@ -92,10 +93,11 @@ function RegisterAccount() {
     }
 
     return (
+        <Container>
         <Box component="form" onSubmit={handleSubmit} noValidate>
-            <div>
-                <h1>Criar Conta</h1>
-                <p>Insira suas informações de cadastro abaixo:</p>
+            <div >
+                <Typography variant="h4" align="center">Criar Conta</Typography>
+                <Typography variant="h6" >Insira suas informações de cadastro abaixo:</Typography>
             </div>
             <FormControl fullWidth error={!!errors.name} margin="normal">
                 <TextField
@@ -202,7 +204,13 @@ function RegisterAccount() {
             <Button type="submit" variant="contained" color="primary" fullWidth disabled={hasErrors}>
                 Criar conta
             </Button>
+                
         </Box>
+        <Box><Typography variant="h6" align="center"> Já possui uma conta?<br /> <a href="/">Entre aqui</a></Typography></Box>
+        <Button type="submit" variant="contained" color="secondary" fullWidth >
+                Entrar con gemail
+            </Button>
+        </Container>
     )
 }
 
