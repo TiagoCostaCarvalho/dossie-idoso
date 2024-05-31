@@ -14,6 +14,18 @@ function HomePage(props) {
   {
     title: "BBBBB",
     description: "BBBBBB"
+  },
+  {
+    title: "CCCCC",
+    description: "CCCCC"
+  },
+  {
+    title: "DDDDD",
+    description: "DDDDD"
+  },
+  {
+    title: "EEEEE",
+    description: "EEEEE"
   }
 ]
 

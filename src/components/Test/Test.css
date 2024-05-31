@@ -8,4 +8,29 @@
   justify-content: center; 
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.searchField {
+  display: flex;
+  align-items: center;
+  background-color: purple;
+  border-radius: 16px;
+  padding: 0 12px;
+  justify-content: center; 
+  align-items: center;
+  width: fit-content;
+}
+
+.searchInput {
+  color: white;
+  & .MuiInputBase-root:before, & .MuiInputBase-root:after {
+    border-bottom: none;
+  }
+  & .MuiInputBase-root:hover:not(.Mui-disabled):before {
+    border-bottom: none;
+  }
+  & .MuiInputBase-input {
+    padding: 8px 4px;
+  }
 }

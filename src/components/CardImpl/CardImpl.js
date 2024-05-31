@@ -18,7 +18,7 @@ export default function CardImpl(props) {
     //props tem: title, description, imgUrl, imgAlt, cardWidth
 
   return (
-    <Card sx={{maxWidth: props.cardWidth}}>
+    <Card sx={{maxWidth: props.cardWidth, minWidth:props.cardWidth}}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
