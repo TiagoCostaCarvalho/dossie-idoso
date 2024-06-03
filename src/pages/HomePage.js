@@ -5,7 +5,8 @@ import MainHeader from '../components/MainHeader/MainHeader';
 function HomePage(props) {
   const saudeCards = [{
     title: "Titulo muito louco",
-    description: "Descricao muito louca"
+    description: "Descricao muito louca",
+    imgUrl: "https://escolakids.uol.com.br/upload/conteudo/images/2018/12/foca-harpa.jpg"
   },
   {
     title: "Aawawa",
@@ -34,12 +35,12 @@ const lazerCards = [{
   description: "Descricao muito louca"
 },
 {
-  title: "Lazer Aawawa",
-  description: "Aawaaawawa"
+  title: "Lazer muito louco",
+  description: "Descricao muito louca"
 },
 {
-  title: "Lazer BBBBB",
-  description: "BBBBBB"
+  title: "Lazer muito louco",
+  description: "Descricao muito louca"
 }
 ]
 

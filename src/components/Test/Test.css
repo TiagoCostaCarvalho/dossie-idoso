@@ -14,7 +14,7 @@
 .searchField {
   display: flex;
   align-items: center;
-  background-color: purple;
+  background-color: rgb(128, 0, 128);
   border-radius: 16px;
   padding: 0 12px;
   justify-content: center; 

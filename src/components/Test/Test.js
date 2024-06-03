@@ -5,7 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Box } from '@mui/material';
 import { Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import CardImpl from 'components/CardImpl/CardImpl';
+import CardHome from 'components/CardHome/CardHome';
 import Grid from '@mui/material/Grid';
 
 function Test(props) {
@@ -34,7 +34,7 @@ function Test(props) {
       //props tem: title, description, imgUrl, imgAlt, cardWidth  
       !!selectedCards ?  selectedCards.map(card => 
       <Grid item xs={3}> 
-        <CardImpl key={card.title} title={card.title} description={card.description} cardWidth={180}/> 
+        <CardHome key={card.title} title={card.title} description={card.description} jmgUrl={card.imgUrl} cardWidth={180}/> 
       </Grid>)
       : "Temos nada"
     }
