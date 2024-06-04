@@ -9,20 +9,20 @@ import iconFontPlus from 'assets/icon-font-plus.png'
 function AccessibilityButtons(props) {
   return (
     <div className={props.className} style={props.style}>
-      <IconButton>
-        <img src={iconBoldMinus} className="App-logo" alt="logo" />
+      <IconButton aria-label='Diminuir negrito do texto'>
+        <img src={iconBoldMinus} alt="Letra L sem seriff em caixa alta da cor branca" />
       </IconButton>
-      <IconButton>
-        <img src={iconBoldPlus} className="App-logo" alt="logo" />
+      <IconButton aria-label='Aumentar negrito do texto'>
+        <img src={iconBoldPlus}  alt="Letra L com seriff em caixa alta da cor branca" />
       </IconButton>
-      <IconButton>
-        <img src={iconContrast} className="App-logo" alt="logo" />
+      <IconButton aria-label='Alterar contraste da página'>
+        <img src={iconContrast}  alt="Círculo branco preenchido pela metade com branco" />
       </IconButton>
-      <IconButton>
-        <img src={iconFontMinus} className="App-logo" alt="logo" />
+      <IconButton aria-label='Diminuir tamanho do texto'>
+        <img src={iconFontMinus}  alt="Letra A com símbolo de menos ao lado em branco" />
       </IconButton>
-      <IconButton>
-        <img src={iconFontPlus} className="App-logo" alt="logo" />
+      <IconButton aria-label='Aumentar tamanho do texto'>
+        <img src={iconFontPlus}  alt="Letra A com símbolo de mais ao lado em branco" />
       </IconButton>
     </div>
   );

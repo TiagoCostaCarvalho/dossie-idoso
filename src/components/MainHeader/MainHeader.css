@@ -20,3 +20,17 @@
   display: flex;
   justify-content: space-between;
 }
+
+.ContainedButton {
+  background-color: black;
+  text-transform: none;
+  width: 150px;
+  margin-right: 40px;
+}
+
+.OutlinedButton {
+  border: solid 1px white;
+  color: white;
+  text-transform: none;
+  width: 150px;
+}

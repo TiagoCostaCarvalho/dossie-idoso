@@ -24,7 +24,7 @@ function MainHeader(props) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, letterSpacing:'.2rem' }}>
     <AppBar position="static" className="MainHeader">
       <Toolbar style={{flexDirection:'column'}}>
         {isMobileSize ?
@@ -44,7 +44,7 @@ function MainHeader(props) {
             <Logo />
             <div style={{width:'48px'}} />
           </div>
-          <DrawerMenu open={open} onClose={toggleDrawer(false)} />
+          <DrawerMenu isMobileSize={isMobileSize} open={open} onClose={toggleDrawer(false)} user={user} isLoggedIn={isLoggedIn} isInCreateAccountPage={isInCreateAccountPage} />
         </> :
         <>
           <div className='MainButtons' style={{width:'100%'}}>
@@ -59,20 +59,19 @@ function MainHeader(props) {
               {!isLoggedIn && 
                 <>
                     {!isInCreateAccountPage &&
-                      <Button variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px'}}>Criar conta</Button>
+                      <Button variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px', marginRight: '40px', letterSpacing:'.1rem', fontSize:'16px'}}>Criar conta</Button>
                     }
-                    <Button variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px'}}>Entrar</Button>
+                    <Button variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px', letterSpacing:'.1rem', fontSize:'16px'}}>Entrar</Button>
                 </>
               }
             </div>
             <Logo />
             <AccessibilityButtons className='SideButtons' style={{marginTop:'1rem'}} />
           </div>
-          <Navigation />
+          <Navigation isMobileSize={isMobileSize} />
         </>
         }
       </Toolbar>
-      
     </AppBar>
   </Box>
   );

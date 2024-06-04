@@ -5,7 +5,7 @@ import MainHeader from '../components/MainHeader/MainHeader';
 function HomePage(props) {
     return (
       <>
-        <MainHeader user="" isLoggedIn={false} isInCreateAccountPage={false} />
+        <MainHeader user="Pedro123" isLoggedIn={false} isInCreateAccountPage={false} />
         <BaseContainer>
           <Test />
         </BaseContainer>
