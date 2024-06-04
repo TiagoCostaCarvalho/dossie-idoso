@@ -6,7 +6,7 @@ function ButtonWithDisable(props) {
   //also an "label"
 
   return (
-    <Button variant="contained" disabled={props.isDisabled} 
+    <Button variant="contained" disabled={props.isDisabled}  onClick={props.onClick}
       sx={{
         "&.Mui-disabled": {
           background: "#40484C",
