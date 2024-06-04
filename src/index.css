@@ -18,5 +18,10 @@ code {
 }
 
 :root{
+<<<<<<< Updated upstream
   --main-purple-color: #6750A4;
+=======
+  --main-purple-color: #6750A4; 
+  --container-purple-color: #F7F2FA;
+>>>>>>> Stashed changes
 }

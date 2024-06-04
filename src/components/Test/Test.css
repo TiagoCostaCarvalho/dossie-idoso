@@ -4,6 +4,7 @@
 }
 
 .Center{
+<<<<<<< Updated upstream
   display:flex;
   justify-content: center; 
   align-items: center;
@@ -15,6 +16,25 @@
   display: flex;
   align-items: center;
   background-color: rgb(128, 0, 128);
+=======
+  display:flex !important;
+  justify-content: center !important; 
+  align-items: center !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.button{
+  border-radius: 16px !important;
+  background-color: var(--main-purple-color) !important;  
+  color: white !important; 
+}
+ 
+.searchField {
+  display: flex;
+  align-items: center;
+  background-color: var(--main-purple-color);
+>>>>>>> Stashed changes
   border-radius: 16px;
   padding: 0 12px;
   justify-content: center; 
@@ -33,4 +53,17 @@
   & .MuiInputBase-input {
     padding: 8px 4px;
   }
+<<<<<<< Updated upstream
+=======
+} 
+
+.fixedButton {
+  position: fixed !important;
+  bottom: 10px !important;  /* Ajuste conforme necessário */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-radius: 16px !important;
+  background-color: var(--main-purple-color) !important;  
+  color: white !important; 
+>>>>>>> Stashed changes
 }
