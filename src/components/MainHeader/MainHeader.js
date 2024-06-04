@@ -3,36 +3,76 @@ import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Image } from '@mui/icons-material';
 import useWindowSize from 'helpers/useWindowSize';
 import Logo from 'components/Logo/Logo';
-import AccessibilityButtons from 'components/AccessibilityButtons/AccessibilityButtons';
 import Navigation from 'components/Navigation/Navigation';
+import  IconButton  from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import AccessibilityButtons from 'components/AccessibilityButtons/AccessibilityButtons';
+import DrawerMenu from 'components/DrawerMenu/DrawerMenu';
 
 function MainHeader(props) {
-  
-  const isMobileSize = useWindowSize().width <= 600;  
+  const isLoggedIn = props.isLoggedIn ?? false;
+  const user = props.user ?? '';
+  const isInCreateAccountPage = props.isInCreateAccountPage ?? false;
+  const isMobileSize = useWindowSize().width <= 1000;  
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
     <AppBar position="static" className="MainHeader">
-      <Toolbar>
-        {!isMobileSize && 
+      <Toolbar style={{flexDirection:'column'}}>
+        {isMobileSize ?
         <>
-          <div className='MainButtons'>
-            <Button variant="contained">Contained</Button>
-            <Button variant="outlined">Outlined</Button>
+          <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%'}}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+              style={{width: '48px'}}
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
             <Logo />
-            <AccessibilityButtons />
+            <div style={{width:'48px'}} />
+          </div>
+          <DrawerMenu open={open} onClose={toggleDrawer(false)} />
+        </> :
+        <>
+          <div className='MainButtons' style={{width:'100%'}}>
+            <div className='SideButtons'>
+              {isLoggedIn &&
+                <>
+                  <div className='User'>
+                    Olá, {user}!
+                  </div>
+                </>
+              }
+              {!isLoggedIn && 
+                <>
+                    {!isInCreateAccountPage &&
+                      <Button variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px'}}>Criar conta</Button>
+                    }
+                    <Button variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px'}}>Entrar</Button>
+                </>
+              }
+            </div>
+            <Logo />
+            <AccessibilityButtons className='SideButtons' style={{marginTop:'1rem'}} />
           </div>
           <Navigation />
         </>
         }
       </Toolbar>
+      
     </AppBar>
   </Box>
   );

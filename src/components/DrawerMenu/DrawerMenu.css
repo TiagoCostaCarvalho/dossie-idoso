@@ -1,0 +1,16 @@
+.Drawer {
+  background-color: var(--main-purple-color);
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SideButtons {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}

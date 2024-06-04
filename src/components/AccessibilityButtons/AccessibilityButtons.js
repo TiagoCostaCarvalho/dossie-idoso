@@ -6,9 +6,9 @@ import iconContrast from 'assets/icon-contrast.png'
 import iconFontMinus from 'assets/icon-font-minus.png'
 import iconFontPlus from 'assets/icon-font-plus.png'
 
-function AccessibilityButtons() {
+function AccessibilityButtons(props) {
   return (
-    <div >
+    <div className={props.className} style={props.style}>
       <IconButton>
         <img src={iconBoldMinus} className="App-logo" alt="logo" />
       </IconButton>

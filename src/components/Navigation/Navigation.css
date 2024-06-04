@@ -3,3 +3,11 @@
   cursor: pointer;
 }
 
+.MenuAnchor {
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  width: 140px;
+  border-right: 1px solid white;
+  text-align: center;
+}

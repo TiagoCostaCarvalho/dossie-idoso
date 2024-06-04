@@ -1,9 +1,22 @@
 .MainHeader {
   background-color: var(--main-purple-color);
+  padding-top: 1rem;
+}
+
+.User {
+  font-size: 20px;
+  font-weight: 500;
+  width: 340px;
 }
 
 .MainButtons {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.SideButtons {
+  width: 340px;
+  display: flex;
+  justify-content: space-between;
 }
