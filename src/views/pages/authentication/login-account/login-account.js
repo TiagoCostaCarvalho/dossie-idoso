@@ -19,6 +19,8 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
 import MainHeader from "components/MainHeader/MainHeader";
 import BreadcrumbsContainer from "components/BreadcrumbsContainer/BreadcrumbsContainer";
+import Footer from 'components/Footer/footer';
+
 
 const loginSchema = z.object({
   email: z.string().email({ message: "E-mail inválido" }),
@@ -172,6 +174,7 @@ function LoginAccount() {
         </Typography>
       </Box>
     </Container>
+    <Footer />
     </>
     
   );
