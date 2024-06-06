@@ -18,5 +18,7 @@ code {
 }
 
 :root{
-  --main-purple-color: #6750A4;
+  --main-purple-color: #6750A4; 
+  --container-purple-color: #F7F2FA;
+  --text-purple-color: #21005D; 
 }
