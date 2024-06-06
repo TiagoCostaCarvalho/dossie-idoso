@@ -2,6 +2,15 @@ import Test from '../components/Test/Test';
 import BaseContainer from '../components/BaseContainer/BaseContainer';
 import MainHeader from '../components/MainHeader/MainHeader';
 import Footer from 'components/Footer/Footer';
+import idosoCorridaUrl from "../resources/idosoCorrida.jpg";
+import idosoDiabetesUrl from "../resources/idosoDiabetes.jpg";
+import idosoTristeUrl from "../resources/idosoTriste.jpg";
+import dinheirosAntigosUrl from "../resources/dinheirosAntigos.jpg";
+import coisasAntigasUrl from "../resources/coisasAntigas.jpg";
+import idosoCelular from "../resources/idosoCelular.jpg"; 
+import idosoFestaUrl from "../resources/idosoFesta.jpeg"; 
+import idosoJogoUrl from "../resources/idosoJogo.jpg"; 
+import idosoBoardgameUrl from "../resources/idosoBoardgame.jpg"; 
 
 function HomePage(props) {
   const saudeCards = [{
