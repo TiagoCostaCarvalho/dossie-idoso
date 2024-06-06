@@ -1,6 +1,7 @@
 import Test from '../components/Test/Test';
 import BaseContainer from '../components/BaseContainer/BaseContainer';
 import MainHeader from '../components/MainHeader/MainHeader';
+import Footer from 'components/Footer/footer';
 
 function HomePage(props) {
     return (
@@ -9,6 +10,7 @@ function HomePage(props) {
         <BaseContainer>
           <Test />
         </BaseContainer>
+        <Footer />
       </>
     );
   }
