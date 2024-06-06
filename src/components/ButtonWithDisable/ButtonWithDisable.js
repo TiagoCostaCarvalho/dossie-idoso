@@ -10,7 +10,8 @@ function ButtonWithDisable(props) {
       sx={{
         "&.Mui-disabled": {
           background: "#40484C",
-          color: "#ffffff"
+          color: "#ffffff",
+          marginBottom: "4em"
         },
         "&:hover": { 
           background: "#1B1736"
