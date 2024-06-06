@@ -1,68 +1,44 @@
-<<<<<<< Updated upstream
-=======
-import './CardHome.css'; 
->>>>>>> Stashed changes
+ import './CardHome.css';  
 import * as React from 'react'; 
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-<<<<<<< Updated upstream
-import CardActions from '@mui/material/CardActions'; 
-import Avatar from '@mui/material/Avatar';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share'; 
-=======
+import CardContent from '@mui/material/CardContent'; 
 import CardActions from '@mui/material/CardActions';  
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
->>>>>>> Stashed changes
+import Typography from '@mui/material/Typography'; 
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import Button from '@mui/material/Button';
+import { red } from '@mui/material/colors';
 
 
 export default function CardImpl(props) {
     //props tem: title, description, imgUrl, imgAlt, cardWidth
-<<<<<<< Updated upstream
-
-  return (
-    <Card sx={{maxWidth: props.cardWidth, minWidth:props.cardWidth, minHeight: 200}}>
-=======
+ 
  
   return (
     <Card className="cardHome" sx={{maxWidth: props.cardWidth, minWidth:props.cardWidth, minHeight: 200}}>
->>>>>>> Stashed changes
-      <CardHeader 
+       <CardHeader 
         action={
         <IconButton aria-label="audio">
-            <VolumeUpIcon />
+            <VolumeUpIcon className="textPurple"/>
         </IconButton>
         }
         title={props.title}
         sx={{minHeight:100}}
-      />
-<<<<<<< Updated upstream
-      {props.imgAlt && 
-=======
-      { 
->>>>>>> Stashed changes
+      /> 
+      {  
         <CardMedia
           component="img"
           height="200"
           image={props.imgUrl}
           alt={props.imgAlt || ""}
-<<<<<<< Updated upstream
-          sx={{ height: 200, objectFit: 'cover' }}
-=======
-          sx={{ height: 200, objectFit: 'cover' }} 
->>>>>>> Stashed changes
+ 
+          sx={{ height: 200, objectFit: 'cover' }}  
         />
       }
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" className="textPurple">
           {props.description}
         </Typography>
       </CardContent>
