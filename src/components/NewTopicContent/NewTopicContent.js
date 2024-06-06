@@ -14,6 +14,7 @@ function NewTopicContent() {
   const [description, setDescription] = React.useState('');
   const [category, setCategory] = React.useState('');
   const [bannerUrl, setBannerUrl] = React.useState('');
+  const [bannerAlt, setBannerAlt] = React.useState('');
 
   const isButtonDisabled = useMemo(() => {
     return !name || !description || !category;
@@ -32,10 +33,10 @@ function NewTopicContent() {
   [category, name]);
 
   const submitAction = useCallback(() => {
-    const newTopic = {name, description, category, bannerUrl};
+    const newTopic = {name, description, category, bannerUrl, bannerAlt};
     localStorage.setItem("newTopic", JSON.stringify(newTopic));
     navigate("/new-topic/example");
-  }, [name, description, category, bannerUrl]);
+  }, [name, description, category, bannerUrl, bannerAlt]);
 
   return (
     <Box className="NewTopicContent" component="form">
@@ -67,6 +68,7 @@ function NewTopicContent() {
 
       <FormControl variant="outlined" sx={{ minWidth: 120, gap: "12px" }}>
         <TextFieldWithDelete required={false} value={bannerUrl} setValue={setBannerUrl} label="Link (URL) do banner" />
+        <TextFieldWithDelete required={false} value={bannerAlt} setValue={setBannerAlt} label="Texto alternativo (descritivo) da imagem" />
       </FormControl>
 
 

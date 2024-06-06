@@ -1,5 +1,5 @@
 import './TextFieldWithDelete.css';
-import { TextField, InputAdornment } from '@mui/material';
+import { TextField, InputAdornment, IconButton } from '@mui/material';
 import CancelIcon from 'components/Icons/CancelIcon/CancelIcon';
 
 function TextFieldWithDelete(props) {
@@ -12,13 +12,22 @@ function TextFieldWithDelete(props) {
 
   return (
     <TextField required={props.required != null ? props.required : false} label={props.label} variant="outlined" value={props.value} onChange={handleValueChange}
-      InputProps={{
-        endAdornment: (
-          <InputAdornment position="end" onClick={(e) => {props.setValue('')}}>
+    multiline
+    maxRows={10}
+    fullWidth
+    InputProps={{
+      endAdornment: props.value && (
+        <InputAdornment position="end">
+          <IconButton
+            aria-label="clear input"
+            onClick={(e) => {props.setValue('')}}
+            edge="end"
+          >
             <CancelIcon />
-          </InputAdornment>
-        ),
-      }}
+          </IconButton>
+        </InputAdornment>
+      ),
+    }}
     />
   );
 }

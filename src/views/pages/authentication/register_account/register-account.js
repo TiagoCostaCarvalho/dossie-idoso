@@ -9,11 +9,16 @@ import {
   IconButton,
   Typography,
   Container,
+  Link,
+  Breadcrumbs
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
+import CancelIcon from "components/Icons/CancelIcon/CancelIcon";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
+import BreadcrumbsContainer from 'components/BreadcrumbsContainer/BreadcrumbsContainer';
+import MainHeader from "components/MainHeader/MainHeader";
 
 const registerSchema = z
   .object({
@@ -99,7 +104,7 @@ function RegisterAccount() {
 
     const validation = registerSchema.safeParse(formData);
     if (validation.success) {
-      localStorage.setItem("user", formData.name);
+      localStorage.setItem("user", JSON.stringify({name: formData.name}));
       navigate("/success-signup");
     } else {
       console.log("Erro ao preencher os dados");
@@ -107,7 +112,18 @@ function RegisterAccount() {
   };
 
   return (
+    <>
+    <MainHeader/>
+    <BreadcrumbsContainer>
+      <Breadcrumbs aria-label="breadcrumb">
+        <Link underline="hover" color="#21005D" href="/">
+          Home
+        </Link>
+        <Typography color="#21005D">Criar Conta</Typography>
+      </Breadcrumbs>
+    </BreadcrumbsContainer>
     <Container sx={{ padding: 15 }}>
+
       <Box component="form" onSubmit={handleSubmit} noValidate>
         <div>
           <Typography variant="h4" align="center">
@@ -134,7 +150,7 @@ function RegisterAccount() {
                     onClick={() => handleClear("name")}
                     edge="end"
                   >
-                    <ClearIcon />
+                    <CancelIcon />
                   </IconButton>
                 </InputAdornment>
               ),
@@ -159,7 +175,7 @@ function RegisterAccount() {
                     onClick={() => handleClear("email")}
                     edge="end"
                   >
-                    <ClearIcon />
+                    <CancelIcon />
                   </IconButton>
                 </InputAdornment>
               ),
@@ -237,9 +253,10 @@ function RegisterAccount() {
         </Typography>
       </Box>
       <Button type="submit" variant="contained" color="secondary" fullWidth>
-        Entrar con gemail
+        Entrar com gmail
       </Button>
     </Container>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import Test from '../components/Test/Test';
 import BaseContainer from '../components/BaseContainer/BaseContainer';
-import MainHeader from '../components/MainHeader/MainHeader';
+import MainHeader from '../components/MainHeader/MainHeader'; 
+
 import idosoCorridaUrl from "../resources/idosoCorrida.jpg";
 import idosoDiabetesUrl from "../resources/idosoDiabetes.jpg";
 import idosoTristeUrl from "../resources/idosoTriste.jpg";
@@ -11,7 +12,9 @@ import idosoBoardgameUrl from "../resources/idosoBoardgame.jpg";
 
 import dinheirosAntigosUrl from "../resources/dinheirosAntigos.jpg";
 import coisasAntigasUrl from "../resources/coisasAntigas.jpg";
-import idosoCelular from "../resources/idosoCelular.jpg";
+import idosoCelular from "../resources/idosoCelular.jpg"; 
+
+import Footer from 'components/Footer/footer'; 
 
 function HomePage(props) {
   const saudeCards = [{
@@ -76,10 +79,11 @@ const economiaCards = [{
  
     return (
       <>
-        <MainHeader/>
+        <MainHeader user="Pedro123" isLoggedIn={false} isInCreateAccountPage={false} />
         <BaseContainer>
           <Test saudeCards={saudeCards} lazerCards={lazerCards} economiaCards={economiaCards}/> 
         </BaseContainer>
+        <Footer />
       </>
     );
   }
