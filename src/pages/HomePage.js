@@ -12,7 +12,7 @@ import idosoFestaUrl from "../resources/idosoFesta.jpeg";
 import idosoJogoUrl from "../resources/idosoJogo.jpg"; 
 import idosoBoardgameUrl from "../resources/idosoBoardgame.jpg"; 
 import HomeContainer from 'components/HomeContainer/HomeContainer';
-import Footer from 'components/Footer/footer';
+
 
 function HomePage(props) {
   const saudeCards = [{
