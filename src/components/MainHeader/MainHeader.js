@@ -73,9 +73,9 @@ function MainHeader(props) {
               {!isLoggedIn && 
                 <>
                     {!isInCreateAccountPage &&
-                      <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px', marginRight: '40px', letterSpacing:'.1rem', fontSize:'16px'}}>Criar conta</Button>
+                      <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px', marginRight: '40px', letterSpacing:'.1rem', fontSize:'1rem'}}>Criar conta</Button>
                     }
-                    <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px', letterSpacing:'.1rem', fontSize:'16px'}}>Entrar</Button>
+                    <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px', letterSpacing:'.1rem', fontSize:'1rem'}}>Entrar</Button>
                 </>
               }
             </div>

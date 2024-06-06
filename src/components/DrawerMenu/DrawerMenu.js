@@ -40,14 +40,14 @@ function DrawerMenu(props) {
           <div className='User'>
             Olá, {user}!
           </div>
-          <Button onClick={(e) => {props.handleLogout()}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Sair da minha conta</Button>
+          <Button onClick={(e) => {props.handleLogout()}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'1rem', fontWeight:'bold'}}>Sair da minha conta</Button>
         </>
         :
         <>
           {!isInCreateAccountPage &&
-            <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor:'black', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Criar conta</Button>
+            <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor:'black', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'1rem', fontWeight:'bold'}}>Criar conta</Button>
           }
-          <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0',  letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Entrar</Button>
+          <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0',  letterSpacing:'.1rem', fontSize:'1rem', fontWeight:'bold'}}>Entrar</Button>
         </>
         }
         <Navigation isMobileSize={isMobileSize} />

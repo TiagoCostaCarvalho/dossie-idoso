@@ -79,11 +79,11 @@ function Test(props) {
         !!filteredCards ?  filteredCards.map(card => 
           <CardHome key={card.title} title={card.title} description={card.description} imgUrl={card.imgUrl} cardWidth={300}/>
         )
-        : "Temos nada"
+        : "Sem conteúdos no momento"
       }
       </div>
     </Box>
-    <Button className="NewTopic" onClick={(e) => {navigate("/new-topic")}} style={{fontSize: "1.5em", margin: "48px", padding: "12px"}} >Começar um novo conteúdo!</Button> 
+    <Button className="NewTopic" onClick={(e) => {navigate("/new-topic")}} style={{fontSize: "2rem", margin: "3rem", padding: "0.5rem 1rem", textTransform: "none"}} >Começar um novo conteúdo!</Button> 
     <Button className="topButton" onClick={scrollToTop}>
         <ArrowUpwardIcon />
         Topo
