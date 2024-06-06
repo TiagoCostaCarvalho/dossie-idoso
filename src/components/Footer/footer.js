@@ -34,7 +34,7 @@ function Footer() {
         </li>
       </ul>
       
-      <span>
+      <span className="icons">
         <FacebookIcon />
         <WhatsAppIcon />
         <XIcon />

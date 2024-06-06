@@ -1,3 +1,9 @@
+.icons{
+  cursor: pointer;
+  display: flex;
+  margin-left: 40%;
+ }
+
 .sobre{
 width: 60px;
 height: 60px;
