@@ -3,6 +3,7 @@ import BaseContainer from '../components/BaseContainer/BaseContainer';
 import MainHeader from '../components/MainHeader/MainHeader';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import NewTopicContent from 'components/NewTopicContent/NewTopicContent';
+import Footer from '../components/Footer/footer';
 
 function NewTopic(props) {
     return (
@@ -20,6 +21,7 @@ function NewTopic(props) {
         <BaseContainer>
           <NewTopicContent/>
         </BaseContainer>
+        <Footer />
       </>
     );
   }

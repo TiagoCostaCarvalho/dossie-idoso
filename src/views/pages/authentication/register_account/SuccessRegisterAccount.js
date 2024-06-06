@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Card, Container, Typography, Stack, Link, Breadcrumbs } from "@mui/material";
 import BreadcrumbsContainer from 'components/BreadcrumbsContainer/BreadcrumbsContainer';
 import MainHeader from "components/MainHeader/MainHeader";
+import Footer from "components/Footer/footer";
 
 function SuccessRegisterAccount() {
   const user = localStorage.getItem("user");
@@ -60,6 +61,7 @@ function SuccessRegisterAccount() {
           </Stack>
         </Card>
       </Container>
+      <Footer/>
     </>
   );
 }

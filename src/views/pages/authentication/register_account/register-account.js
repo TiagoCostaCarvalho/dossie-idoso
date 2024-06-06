@@ -19,6 +19,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
 import BreadcrumbsContainer from 'components/BreadcrumbsContainer/BreadcrumbsContainer';
 import MainHeader from "components/MainHeader/MainHeader";
+import Footer from "components/Footer/footer";
 
 const registerSchema = z
   .object({
@@ -256,6 +257,7 @@ function RegisterAccount() {
         Entrar com gmail
       </Button>
     </Container>
+    <Footer />
     </>
   );
 }

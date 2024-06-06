@@ -3,6 +3,7 @@ import BaseContainer from '../components/BaseContainer/BaseContainer';
 import MainHeader from '../components/MainHeader/MainHeader';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import NewEntryContent from 'components/NewEntryContent/NewEntryContent';
+import Footer from '../components/Footer/footer';
 
 function NewEntry(props) {
     return (
@@ -20,6 +21,7 @@ function NewEntry(props) {
         <BaseContainer>
           <NewEntryContent/>
         </BaseContainer>
+        <Footer />
       </>
     );
   }

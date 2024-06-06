@@ -3,6 +3,7 @@ import BaseContainer from '../components/BaseContainer/BaseContainer';
 import MainHeader from '../components/MainHeader/MainHeader';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import NewTopicExampleContent from 'components/NewTopicExampleContent/NewTopicExampleContent';
+import Footer from '../components/Footer/footer';
 
 function NewTopicExample(props) {
     return (
@@ -20,6 +21,7 @@ function NewTopicExample(props) {
         <BaseContainer>
           <NewTopicExampleContent/>
         </BaseContainer>
+        <Footer />
       </>
     );
   }
