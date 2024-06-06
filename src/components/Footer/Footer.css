@@ -1,26 +1,139 @@
-  .footer-top {
-      background-color: rgb(59, 2, 106);
-      text-align: left;
-      display: flex;
-      cursor: pointer;
-      font-size: 20px;
-      font-weight: 500;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: left;
-      letter-spacing: 0.2rem;
-      width: 100vw;
-  
-    }
-   
-  .footer {
-      text-align: center;
-      align-items: center;
-      background-color: black;
-      font-size: calc(10px + 1vmin);
-      color: white;
-      letter-spacing: 0.2rem;
-    }
+.sobre{
+width: 60px;
+height: 60px;
+left: 21px;
+top: 2038px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+height: 26px;
+font-size: 18px;
+line-height: 27px;
+
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #FFFFFF;
+
+}
+.termos-uso{
+/* Termos de uso */
+
+width: 320px;
+height: 30px;
+left: 272px;
+top: 2038px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #FFFFFF;
+
+}
+
+
+.politica-privacidade{
+  /* Políticas de privacidade */
+
+width: 320px;
+height: 60px;
+left: 272px;
+top: 2088px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #FFFFFF;
+}
+.perguntas-frequentes{
+  /* Perguntas frequentes */
+
+width: 320px;
+height: 50px;
+left: 21px;
+top: 2088px;
+
+
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height, or 150% */
+display: flex;
+align-items: center;
+letter-spacing: 0.1em;
+text-decoration-line: underline;
+
+color: #FFFFFF;
+
+
+}
+
+
+.footer-top{
+  height: 160px;
+  top: 90%;
+  background: #1B1736;
+
+  position: absolute;
+  text-align: center;
+  font-family: 'Roboto';
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2rem;
+
+  width: 100vw;
+  color: white;
+ }  
+
+.footer-botton {
+  background-color:black;
+  margin-top: 1em;
+    
+  width: 100vw;
+  height: 60px;
+ 
+  text-align:center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+ 
+  font-size: 15px;
+  align-items: center;
+  letter-spacing: 0.2rem;
+
+  padding: 1rem 2rem;
+  color: white;
+ 
+ 
+  position: absolute;
+  top: 90%; 
+    
+ }
   
