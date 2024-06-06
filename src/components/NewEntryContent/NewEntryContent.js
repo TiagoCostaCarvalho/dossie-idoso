@@ -19,8 +19,8 @@ function NewEntryContent() {
   const [imgAlt, setImgAlt] = React.useState('');
 
   const isButtonDisabled = useMemo(() => {
-    return !name || !description || !text
-  }, [name, description, text])
+    return !name || !description
+  }, [name, description])
 
   const submitAction = useCallback(() => {
     const newEntry = {name, description, text, imgUrl, imgAlt};
@@ -33,13 +33,13 @@ function NewEntryContent() {
 
   return (
     <Box className="NewEntryContent" component="form">
-      <h1>Novo Entrada no entrada {topic.name}</h1> 
+      <h1>Nova Entrada em {topic.name}</h1> 
 
       {/* <h2>Nome</h2> */}
       <FormControl variant="outlined" sx={{ minWidth: 120, gap: "12px" }}>
         <TextFieldWithDelete value={name} setValue={setName} label="Título da entrada" />
         <TextFieldWithDelete value={description} setValue={setDescription} label="Descrição do entrada" />
-        <TextFieldWithDelete value={text} setValue={setText} label="Texto da entrada" />
+        {/* <TextFieldWithDelete value={text} setValue={setText} label="Texto da entrada" /> */}
         <TextFieldWithDelete required={false} value={imgUrl} setValue={setImgUrl} label="Link (URL) da imagem" />
         <TextFieldWithDelete required={false} value={imgAlt} setValue={setImgAlt} label="Texto alternativo (descritivo) da imagem" />
       </FormControl>

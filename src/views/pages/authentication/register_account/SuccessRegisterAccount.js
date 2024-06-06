@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { Button, Card, Container, Typography, Stack } from "@mui/material";
+import { Button, Card, Container, Typography, Stack, Link, Breadcrumbs } from "@mui/material";
+import BreadcrumbsContainer from 'components/BreadcrumbsContainer/BreadcrumbsContainer';
+import MainHeader from "components/MainHeader/MainHeader";
 
 function SuccessRegisterAccount() {
   const user = localStorage.getItem("user");
@@ -7,6 +9,15 @@ function SuccessRegisterAccount() {
 
   return (
     <>
+      <MainHeader/>
+      <BreadcrumbsContainer>
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="#21005D" href="/">
+            Home
+          </Link>
+          <Typography color="#21005D">Criar Conta</Typography>
+        </Breadcrumbs>
+      </BreadcrumbsContainer>
       <Container sx={{ marginBottom: 8, padding: 15 }}>
         <Typography variant="h6" align="center">
           Bem vindo,

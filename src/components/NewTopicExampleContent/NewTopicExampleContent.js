@@ -21,7 +21,7 @@ function NewTopicExampleContent(props) {
   return (
     <Box className='NewTopicExampleContent'>
       <header className='Section Bottom-Bordered'>
-        <div style={{backgroundImage: newTopic.bannerUrl ? `url(${newTopic.bannerUrl})` : "linear-gradient(to right, #6750A4, #ffffff)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundColor: "#6750A4", minHeight: "300px", backgroundPosition: "center",
+        <div aria-label={newTopic.bannerAlt} style={{backgroundImage: newTopic.bannerUrl ? `url(${newTopic.bannerUrl})` : "linear-gradient(to right, #6750A4, #ffffff)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundColor: "#6750A4", minHeight: "300px", backgroundPosition: "center",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center"

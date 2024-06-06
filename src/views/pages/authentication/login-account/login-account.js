@@ -11,6 +11,7 @@ import {
   Container,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
+import CancelIcon from "components/Icons/CancelIcon/CancelIcon";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { useNavigate } from "react-router-dom";
@@ -105,7 +106,7 @@ function LoginAccount() {
                     onClick={() => handleClear("email")}
                     edge="end"
                   >
-                    <ClearIcon />
+                    <CancelIcon />
                   </IconButton>
                 </InputAdornment>
               ),

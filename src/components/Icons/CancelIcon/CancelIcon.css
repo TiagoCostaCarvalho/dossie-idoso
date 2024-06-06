@@ -1,5 +1,6 @@
 .CancelIconContainer {
   text-align: center;
   cursor: pointer;
+  display: flex;
 }
 

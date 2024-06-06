@@ -45,9 +45,10 @@
     /* display: inline; */
 
     > a {
-      color: #21005D;
-      text-decoration: underline;
-      cursor: pointer;
+      /* color: #21005D; */
+      /* text-decoration: underline; */
+      /* cursor: pointer; */
+      color: #40484C;
     }
 
     > a:hover {
