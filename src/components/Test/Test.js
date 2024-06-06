@@ -7,6 +7,7 @@ import { Button } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import CardHome from 'components/CardHome/CardHome';
 import Grid from '@mui/material/Grid';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 function Test(props) {
   const [selectedCards, setSelectedCards] = useState(props.saudeCards);
@@ -14,6 +15,10 @@ function Test(props) {
   const [searchText, setSearchText] = useState('');
   //const buttonStyle = { borderRadius: '16px', backgroundColor: 'purple', color: 'white', '&:hover': { backgroundColor: 'darkviolet' } }
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   useEffect(() => {
     setFilteredCards(
       selectedCards.filter((card) => 
@@ -55,7 +60,11 @@ function Test(props) {
       }
       </Grid>
     </Box>
-    <Button className="fixedButton" >Começar um novo conteúdo!</Button>
+    <Button className="fixedButton" >Começar um novo conteúdo!</Button> 
+    <Button className="topButton" onClick={scrollToTop}>
+        <ArrowUpwardIcon />
+        Topo
+      </Button>
     </div>
   );
 }

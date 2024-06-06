@@ -57,6 +57,14 @@
   color: white !important; 
 }
 
+.topButton {
+  position: fixed !important;
+  bottom: 10px !important; /* Adjusted to not overlap with other fixed button */
+  right: 20px !important;
+  background-color: #1B1736 !important;
+  color: white !important;
+}
+
 .gridContainer {
   display: flex;
   justify-content: center;
