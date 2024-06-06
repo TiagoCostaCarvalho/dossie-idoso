@@ -17,13 +17,8 @@ export default function CardImpl(props) {
  
  
   return (
-    <Card className="cardHome" sx={{maxWidth: props.cardWidth, minWidth:props.cardWidth, minHeight: 200}}>
+    <Card className="cardHome" sx={{maxWidth: props.cardWidth || "200px", minWidth:props.cardWidth || "300px", minHeight: 200}}>
        <CardHeader 
-        action={
-        <IconButton aria-label="audio">
-            <VolumeUpIcon className="textPurple"/>
-        </IconButton>
-        }
         title={props.title}
         sx={{minHeight:100}}
       /> 

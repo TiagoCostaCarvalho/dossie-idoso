@@ -8,12 +8,15 @@ import Stack from '@mui/material/Stack';
 import CardHome from 'components/CardHome/CardHome';
 import Grid from '@mui/material/Grid';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { useNavigate } from "react-router-dom";
 
 function Test(props) {
   const [selectedCards, setSelectedCards] = useState(props.saudeCards);
   const [filteredCards, setFilteredCards] = useState(props.saudeCards); 
   const [searchText, setSearchText] = useState('');
   const [selectedButton, setSelectedButton] = useState('saude'); // Default selected button
+
+  const navigate = useNavigate();
 
   //const buttonStyle = { borderRadius: '16px', backgroundColor: 'purple', color: 'white', '&:hover': { backgroundColor: 'darkviolet' } }
 
@@ -50,7 +53,7 @@ function Test(props) {
       </Box>
     </Box>
     <Stack spacing={2} direction="row"  className="Center">
-    <Button 
+        <Button 
           onClick={() => handleButtonClick(props.saudeCards, 'saude')} 
           className={`filterButton ${selectedButton === 'saude' ? 'selectedButton' : ''}`}
         >
@@ -70,22 +73,21 @@ function Test(props) {
         </Button>
     </Stack>
     <Box className="gridContainer">
-      <Grid className="Center" container columnSpacing={40} rowSpacing={4}> 
+      <div className="Center CardContainer" container columnSpacing={40} rowSpacing={4}> 
       {
         //props tem: title, description, imgUrl, imgAlt, cardWidth  
         !!filteredCards ?  filteredCards.map(card => 
-        <Grid item xs={12} sm={6} md={4} lg={3} > 
-          <CardHome key={card.title} title={card.title} description={card.description} imgUrl={card.imgUrl} cardWidth={300}/> 
-        </Grid>)
+          <CardHome key={card.title} title={card.title} description={card.description} imgUrl={card.imgUrl} cardWidth={300}/>
+        )
         : "Temos nada"
       }
-      </Grid>
+      </div>
     </Box>
-    <Button className="fixedButton" >Começar um novo conteúdo!</Button> 
+    <Button className="NewTopic" onClick={(e) => {navigate("/new-topic")}} style={{fontSize: "1.5em", margin: "48px", padding: "12px"}} >Começar um novo conteúdo!</Button> 
     <Button className="topButton" onClick={scrollToTop}>
         <ArrowUpwardIcon />
         Topo
-      </Button>
+    </Button>
     </div>
   );
 }

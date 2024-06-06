@@ -4,13 +4,14 @@ import React, { useCallback, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import CardImpl from 'components/CardImpl/CardImpl';
 import { Box } from '@mui/material';
+import CardHome from 'components/CardHome/CardHome';
 
 function NewTopicExampleContent(props) {
 
   const navigate = useNavigate();
 
   const newTopic = JSON.parse(localStorage.getItem("newTopic"));
-  const entries = newTopic.entries != null && newTopic.entries.length > 3 ? newTopic.entries.slice(0,3) : newTopic.entries;
+  const entries = newTopic.entries;
 
   const newEntryOnClick = useCallback(() => {
     navigate("/new-topic/example/new-entry");
@@ -52,7 +53,7 @@ function NewTopicExampleContent(props) {
         ) : (
           <div className='EntriesDiv'>
             {entries.map((entry) => 
-              <CardImpl title={entry.name} description={entry.description} imgUrl={entry.imgUrl} imgAlt={entry.imgAlt}/>
+              <CardHome title={entry.name} description={entry.description} imgUrl={entry.imgUrl} imgAlt={entry.imgAlt}/>
             )}
           </div>
         )}
