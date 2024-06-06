@@ -46,10 +46,10 @@ function Test(props) {
             label="Buscar por tópicos..." 
             variant="standard" 
             InputProps={{ className: 'searchInput' }} 
-            sx={{input: {color: 'white'}}}
+            sx={{input: {color: 'white'}, width: '100%'}}
             InputLabelProps={{ style: { color: 'white' } }} 
             onChange={(e) => setSearchText(e.target.value)}/>
-          <SearchIcon sx={{ color: 'white', mr: 1 }} />
+          <SearchIcon sx={{ color: 'white', mr: 1, mt: 2 }} />
       </Box>
     </Box>
     <Stack spacing={2} direction="row"  className="Center">

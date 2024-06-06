@@ -20,7 +20,7 @@ export default function CardImpl(props) {
     <Card className="cardHome" sx={{maxWidth: props.cardWidth || "200px", minWidth:props.cardWidth || "300px", minHeight: 200}}>
        <CardHeader 
         title={props.title}
-        sx={{minHeight:100}}
+        sx={{minHeight:100, fontWeight: "bold"}}
       /> 
       {  
         <CardMedia
@@ -37,8 +37,8 @@ export default function CardImpl(props) {
           {props.description}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing>
-        <Button variant="contained" color="primary">
+      <CardActions disableSpacing sx={{justifyContent: "right"}}>
+        <Button variant="contained" color="primary" sx={{textTransform: 'none'}}>
           Conferir
         </Button>
       </CardActions>

@@ -83,6 +83,6 @@ const economiaCards = [{
         <Footer />
       </>
     );
-  }
+}
   
   export default HomePage;
