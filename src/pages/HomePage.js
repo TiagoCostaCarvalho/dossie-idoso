@@ -6,7 +6,7 @@ import Footer from 'components/Footer/footer';
 function HomePage(props) {
     return (
       <>
-        <MainHeader/>
+        <MainHeader user="Pedro123" isLoggedIn={false} isInCreateAccountPage={false} />
         <BaseContainer>
           <Test />
         </BaseContainer>
