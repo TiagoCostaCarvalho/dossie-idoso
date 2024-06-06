@@ -1,0 +1,63 @@
+.MenuAnchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  width: 140px;
+  border-right: 1px solid white;
+  text-align: center;
+}
+
+.MenuAnchor a {
+  color: white;
+  text-decoration: none;
+}
+
+.MenuAnchorMobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px solid white;
+  text-align: center;
+  width: 100%;
+  height: 64px;
+}
+
+.MenuAnchorMobile a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+}
+
+.NavigationDesktop {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  margin-right: auto;
+}
+
+.LoggedNavigationDesktop {
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  /* margin-right: auto; */
+  width: 100%;
+
+  div:last-of-type {
+    margin-left: auto;
+  }
+}
+
+.NavigationMobile {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  width: 300px;
+}

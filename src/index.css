@@ -5,9 +5,20 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* our css */
+
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root{
+  --main-purple-color: #6750A4; 
+  --container-purple-color: #F7F2FA;
+  --text-purple-color: #21005D; 
 }

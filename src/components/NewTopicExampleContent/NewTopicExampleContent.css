@@ -1,0 +1,70 @@
+.NewTopicExampleContent {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  h1, h3 {
+    /* padding: 12px 0 0 0; */
+    margin: 0;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  p {
+    padding: 8px 24px 0 24px;
+    text-align: justify;
+  }
+}
+
+.Section {
+  padding: 0 0 24px 0;
+  width: 100%;
+  gap: 12px;
+}
+
+.Bottom-Bordered {
+  border-bottom: 2px solid var(--main-purple-color);
+}
+
+.Centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.List {
+  gap: 32px;
+  display: flex;
+  justify-content: center;
+
+  li {
+    /* display: inline; */
+
+    > a {
+      /* color: #21005D; */
+      /* text-decoration: underline; */
+      /* cursor: pointer; */
+      color: #40484C;
+    }
+
+    > a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.EntriesDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  gap: 20px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
+
+}

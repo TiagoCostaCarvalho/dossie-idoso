@@ -1,0 +1,65 @@
+.FooterLinks {
+  background: #1B1736;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+
+.FooterLinks ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.FooterLinks a {
+  color: white;
+  text-decoration-color: white;
+  font-weight: bold;
+  display: block;
+  min-width: 216px;
+}
+
+.SupportPages {
+  display: flex;
+}
+
+.SupportPagesMobile {
+  flex-direction: column;
+}
+
+.SupportPagesMobile ul + ul {
+  margin-top: 1rem;
+}
+
+.FooterTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.FooterTopMobile {
+  margin: 0 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.FooterTopMobile .SocialMedia {
+  margin-top: 1rem;
+}
+
+.SocialMedia {
+  display: flex;
+  gap: 1rem;
+}
+
+.FooterBottom {
+  text-align: center;
+  background-color: black;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  padding-top: 2.5rem;
+  padding-bottom:  1rem;
+}

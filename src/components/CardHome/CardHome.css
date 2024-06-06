@@ -1,0 +1,11 @@
+.cardHome{
+    background-color: var(--container-purple-color) !important;
+        
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    color: var(--text-purple-color) !important;
+  }
+  
+.textPurple{
+  color: var(--text-purple-color) !important;
+}

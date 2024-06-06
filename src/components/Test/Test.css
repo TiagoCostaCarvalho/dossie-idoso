@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+  color: black;
+}
+
+.Center{
+  display:flex !important;
+  justify-content: center !important; 
+  align-items: center !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.filterButton{
+  border-radius: 16px !important; 
+  color: var(--text-purple-color) !important;  
+  background-color: white !important;  
+  border: 1px solid !important; /* Default border */
+}
+
+.selectedButton {
+  background-color: var(--text-purple-color) !important;  
+  color: white !important;  
+}
+
+.button{
+  border-radius: 16px !important;
+  background-color: var(--main-purple-color) !important;  
+  color: white !important; 
+}
+ 
+.searchField {
+  display: flex;
+  align-items: center;
+  background-color: var(--text-purple-color);
+  border-radius: 16px;
+  padding: 0 12px;
+  justify-content: center; 
+  align-items: center; 
+  max-width: 720;
+  min-width: 360;
+}
+
+.searchInput {
+  color: white;
+  & .MuiInputBase-root:before, & .MuiInputBase-root:after {
+    border-bottom: none;
+  }
+  & .MuiInputBase-root:hover:not(.Mui-disabled):before {
+    border-bottom: none;
+  }
+  & .MuiInputBase-input {
+    padding: 8px 4px;
+  }
+} 
+
+.fixedButton {
+  position: fixed !important;
+  bottom: 10px !important;  /* Ajuste conforme necessário */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-radius: 16px !important;
+  background-color: var(--main-purple-color) !important;  
+  color: white !important; 
+}
+
+.topButton {
+  position: fixed !important;
+  bottom: 10px !important; /* Adjusted to not overlap with other fixed button */
+  right: 20px !important;
+  background-color: #1B1736 !important;
+  color: white !important;
+}
+
+.gridContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

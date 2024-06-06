@@ -1,0 +1,18 @@
+.NewTopicContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  > h1 {
+    text-align: center;
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  > h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+
+}
+

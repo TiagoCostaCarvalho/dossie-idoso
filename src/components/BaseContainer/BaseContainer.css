@@ -1,0 +1,9 @@
+.BaseContainer {
+  padding: 0 25%;
+
+  @media (max-width: 800px) {
+  padding: 0 10%;
+
+  }
+}
+
