@@ -104,7 +104,7 @@ function RegisterAccount() {
 
     const validation = registerSchema.safeParse(formData);
     if (validation.success) {
-      localStorage.setItem("user", formData.name);
+      localStorage.setItem("user", JSON.stringify({name: formData.name}));
       navigate("/success-signup");
     } else {
       console.log("Erro ao preencher os dados");

@@ -5,7 +5,7 @@ function Test() {
   return (
     <div className="App">
       <Button variant="contained">Hello world</Button>
-      <p>Texto teste brabo.</p>
+      <p>Texto teste.</p>
     </div>
   );
 }

@@ -11,10 +11,24 @@ import  IconButton  from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccessibilityButtons from 'components/AccessibilityButtons/AccessibilityButtons';
 import DrawerMenu from 'components/DrawerMenu/DrawerMenu';
+import { useNavigate } from "react-router-dom";
+
 
 function MainHeader(props) {
-  const isLoggedIn = props.isLoggedIn ?? false;
-  const user = props.user ?? '';
+
+  const [user, setUser] = React.useState(JSON.parse(localStorage.getItem("user")));
+  const navigate = useNavigate();
+
+  const isLoggedIn = React.useMemo(() => {
+    if (user) {
+      return true;
+    }
+
+    return false;
+  }, [user]);
+
+  const handleLogout = React.useCallback(() => {setUser(null); localStorage.removeItem("user")}, [user]);
+
   const isInCreateAccountPage = props.isInCreateAccountPage ?? false;
   const isMobileSize = useWindowSize().width <= 1000;  
   const [open, setOpen] = React.useState(false);
@@ -44,7 +58,7 @@ function MainHeader(props) {
             <Logo />
             <div style={{width:'48px'}} />
           </div>
-          <DrawerMenu isMobileSize={isMobileSize} open={open} onClose={toggleDrawer(false)} user={user} isLoggedIn={isLoggedIn} isInCreateAccountPage={isInCreateAccountPage} />
+          <DrawerMenu isMobileSize={isMobileSize} open={open} onClose={toggleDrawer(false)} user={user?.name} handleLogout={handleLogout} isLoggedIn={isLoggedIn} isInCreateAccountPage={isInCreateAccountPage} />
         </> :
         <>
           <div className='MainButtons' style={{width:'100%'}}>
@@ -52,23 +66,23 @@ function MainHeader(props) {
               {isLoggedIn &&
                 <>
                   <div className='User'>
-                    Olá, {user}!
+                    Olá, {user?.name}!
                   </div>
                 </>
               }
               {!isLoggedIn && 
                 <>
                     {!isInCreateAccountPage &&
-                      <Button variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px', marginRight: '40px', letterSpacing:'.1rem', fontSize:'16px'}}>Criar conta</Button>
+                      <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px', marginRight: '40px', letterSpacing:'.1rem', fontSize:'16px'}}>Criar conta</Button>
                     }
-                    <Button variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px', letterSpacing:'.1rem', fontSize:'16px'}}>Entrar</Button>
+                    <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px', letterSpacing:'.1rem', fontSize:'16px'}}>Entrar</Button>
                 </>
               }
             </div>
             <Logo />
             <AccessibilityButtons className='SideButtons' style={{marginTop:'1rem'}} />
           </div>
-          <Navigation isMobileSize={isMobileSize} />
+          <Navigation isMobileSize={isMobileSize} isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
         </>
         }
       </Toolbar>

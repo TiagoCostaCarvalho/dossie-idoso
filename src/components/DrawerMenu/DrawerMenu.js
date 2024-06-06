@@ -6,12 +6,15 @@ import Logo from 'components/Logo/Logo';
 import AccessibilityButtons from 'components/AccessibilityButtons/AccessibilityButtons';
 import Button from '@mui/material/Button';
 import Navigation from 'components/Navigation/Navigation';
+import { useNavigate } from "react-router-dom";
 
 function DrawerMenu(props) {
   const isLoggedIn = props.isLoggedIn ?? false;
   const user = props.user ?? '';
   const isInCreateAccountPage = props.isInCreateAccountPage ?? false;
   const isMobileSize = props.isMobileSize;
+
+  const navigate = useNavigate();
 
   return (
     <Drawer open={props.open} onClose={props.onClose}>
@@ -37,14 +40,14 @@ function DrawerMenu(props) {
           <div className='User'>
             Olá, {user}!
           </div>
-          <Button variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Sair da minha conta</Button>
+          <Button onClick={(e) => {props.handleLogout()}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Sair da minha conta</Button>
         </>
         :
         <>
           {!isInCreateAccountPage &&
-            <Button variant="contained" style={{backgroundColor:'black', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Criar conta</Button>
+            <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor:'black', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Criar conta</Button>
           }
-          <Button variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0',  letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Entrar</Button>
+          <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', marginTop:'2rem', padding:'0.5rem 0',  letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Entrar</Button>
         </>
         }
         <Navigation isMobileSize={isMobileSize} />

@@ -23,7 +23,7 @@ function SuccessRegisterAccount() {
           Bem vindo,
         </Typography>
         <Typography variant="h6" align="center">
-          {user}!
+          {user.name}!
         </Typography>
 
         <Typography variant="h6" align="center">
