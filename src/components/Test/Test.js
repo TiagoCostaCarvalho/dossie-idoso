@@ -13,6 +13,8 @@ function Test(props) {
   const [selectedCards, setSelectedCards] = useState(props.saudeCards);
   const [filteredCards, setFilteredCards] = useState(props.saudeCards); 
   const [searchText, setSearchText] = useState('');
+  const [selectedButton, setSelectedButton] = useState('saude'); // Default selected button
+
   //const buttonStyle = { borderRadius: '16px', backgroundColor: 'purple', color: 'white', '&:hover': { backgroundColor: 'darkviolet' } }
 
   const scrollToTop = () => {
@@ -28,6 +30,10 @@ function Test(props) {
     );
   }, [selectedCards, searchText]);
 
+  const handleButtonClick = (cards, button) => {
+    setSelectedCards(cards);
+    setSelectedButton(button);
+  };
 
   return ( 
     <div className="App"> 
@@ -44,9 +50,24 @@ function Test(props) {
       </Box>
     </Box>
     <Stack spacing={2} direction="row"  className="Center">
-      <Button onClick={() => setSelectedCards(props.saudeCards)} className="filterButton">Saúde</Button>
-      <Button onClick={() => setSelectedCards(props.lazerCards)} className="filterButton">Lazer</Button>
-      <Button onClick={() => setSelectedCards(props.economiaCards)} className="filterButton">Economia</Button>
+    <Button 
+          onClick={() => handleButtonClick(props.saudeCards, 'saude')} 
+          className={`filterButton ${selectedButton === 'saude' ? 'selectedButton' : ''}`}
+        >
+          Saúde
+        </Button>
+        <Button 
+          onClick={() => handleButtonClick(props.lazerCards, 'lazer')} 
+          className={`filterButton ${selectedButton === 'lazer' ? 'selectedButton' : ''}`}
+        >
+          Lazer
+        </Button>
+        <Button 
+          onClick={() => handleButtonClick(props.economiaCards, 'economia')} 
+          className={`filterButton ${selectedButton === 'economia' ? 'selectedButton' : ''}`}
+        >
+          Economia
+        </Button>
     </Stack>
     <Box className="gridContainer">
       <Grid className="Center" container columnSpacing={40} rowSpacing={4}> 

@@ -12,9 +12,15 @@
 }
 
 .filterButton{
-  border-radius: 16px !important;
+  border-radius: 16px !important; 
+  color: var(--text-purple-color) !important;  
+  background-color: white !important;  
+  border: 1px solid !important; /* Default border */
+}
+
+.selectedButton {
   background-color: var(--text-purple-color) !important;  
-  color: white !important; 
+  color: white !important;  
 }
 
 .button{
@@ -30,8 +36,9 @@
   border-radius: 16px;
   padding: 0 12px;
   justify-content: center; 
-  align-items: center;
-  width: fit-content;
+  align-items: center; 
+  max-width: 720;
+  min-width: 360;
 }
 
 .searchInput {
