@@ -66,6 +66,21 @@
   text-transform: none;
 }
 
+.NewTopicMobile {
+  border-radius: 64px !important;
+  background-color: var(--main-purple-color) !important;  
+  color: white !important; 
+  width: 70%;
+  cursor: pointer;
+  text-transform: none;
+}
+
+.StackStyle {
+  > button {
+    width: 33% !important;
+  }
+}
+
 .CardContainer {
   display: flex;
   justify-content: space-around;
