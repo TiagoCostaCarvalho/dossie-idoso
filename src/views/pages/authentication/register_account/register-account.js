@@ -10,7 +10,8 @@ import {
   Typography,
   Container,
   Link,
-  Breadcrumbs
+  Breadcrumbs,
+  Avatar,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import CancelIcon from "components/Icons/CancelIcon/CancelIcon";
@@ -247,7 +248,7 @@ function RegisterAccount() {
         </Button>
       </Box>
       <Box>
-          <Typography variant="h6" align="center" sx={{ color: 'quaternary.contrastText' }}>
+          <Typography variant="h6" align="center" sx={{ color: 'quaternary.contrastText', pt: "1em" }}>
             <span>Já possui uma conta?</span>
             <br />
             <Link href="/login" sx={{ color: 'quaternary.contrastText' }} underline="always" >
@@ -255,9 +256,13 @@ function RegisterAccount() {
             </Link>
           </Typography>
       </Box>
-      <Button type="submit" variant="contained" color="secondary" fullWidth>
-        Entrar com Gmail
-      </Button>
+        <Button
+          variant="outlined"
+          sx={{ color: 'quaternary.contrastText', pt: "1em" }}
+          startIcon={<Avatar sx={{ height: '1em', width: '1em' }} src={'https://cdn-icons-png.flaticon.com/128/300/300221.png'} />}
+          fullWidth>
+          Entrar com Gmail
+        </Button>
     </Container>
     <Footer />
     </>
