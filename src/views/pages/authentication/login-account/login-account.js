@@ -94,7 +94,7 @@ function LoginAccount() {
             <Link underline="hover" color="#21005D" href="/">
               Home
             </Link>
-            <Typography color="#21005D">Novo Tópico</Typography>
+            <Typography color="#21005D">Iniciar sessão</Typography>
           </Breadcrumbs>
         </BreadcrumbsContainer>
 
@@ -113,10 +113,10 @@ function LoginAccount() {
             value={formData.email}
             onChange={handleChange}
             error={!!errors.email}
-            helperText={errors.email}
+            helperText={errors.email || " "}
             fullWidth
             InputProps={{
-              endAdornment: formData.email && (
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="clear input"
@@ -139,10 +139,10 @@ function LoginAccount() {
             value={formData.password}
             onChange={handleChange}
             error={!!errors.password}
-            helperText={errors.password}
+            helperText={errors.password  || " "}
             fullWidth
             InputProps={{
-              endAdornment: formData.password && (
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="Mostrar senha"
@@ -159,7 +159,7 @@ function LoginAccount() {
         <Button
           type="submit"
           variant="contained"
-          color="primary"
+          color="tertiary"
           fullWidth
           disabled={hasErrors}
         >
@@ -167,11 +167,13 @@ function LoginAccount() {
         </Button>
       </Box>
       <Box>
-        <Typography variant="h6" align="center">
-          {" "}
-          Ainda não tem conta?
-          <br /> <a href="/signup">criar conta</a>
-        </Typography>
+          <Typography variant="h6" align="center" sx={{ color: 'quaternary.contrastText' }}>
+            <span sx={{ text: 'primary' }}>Ainda não tem conta?</span>
+            <br />
+            <Link href="/signup" sx={{ color: 'quaternary.contrastText' }} underline="always" >
+              criar conta
+            </Link>
+          </Typography>
       </Box>
     </Container>
     <Footer />

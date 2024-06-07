@@ -239,7 +239,7 @@ function RegisterAccount() {
         <Button
           type="submit"
           variant="contained"
-          color="primary"
+          color="quaternary"
           fullWidth
           disabled={hasErrors}
         >
