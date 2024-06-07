@@ -10,7 +10,8 @@ import {
   Typography,
   Container,
   Link,
-  Breadcrumbs
+  Breadcrumbs,
+  Grid,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import CancelIcon from "components/Icons/CancelIcon/CancelIcon";
@@ -79,7 +80,7 @@ function LoginAccount() {
 
     const validation = loginSchema.safeParse(formData);
     if (validation.success) {
-      localStorage.setItem("user", JSON.stringify({name: "Nome Login"}));
+      localStorage.setItem("user", JSON.stringify({ name: "Nome Login" }));
       navigate("/");
     } else {
       console.log("Erro ao preencher os dados");
@@ -88,95 +89,114 @@ function LoginAccount() {
 
   return (
     <>
-      <MainHeader/>
-        <BreadcrumbsContainer>
-          <Breadcrumbs aria-label="breadcrumb">
-            <Link underline="hover" color="#21005D" href="/">
-              Home
-            </Link>
-            <Typography color="#21005D">Novo Tópico</Typography>
-          </Breadcrumbs>
-        </BreadcrumbsContainer>
+      <MainHeader />
+      <BreadcrumbsContainer>
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="#21005D" href="/">
+            Home
+          </Link>
+          <Typography color="#21005D">Iniciar sessão</Typography>
+        </Breadcrumbs>
+      </BreadcrumbsContainer>
 
-        <Container sx={{ padding: 15 }}>
-      <Box component="form" onSubmit={handleSubmit} noValidate>
-        <div>
-          <Typography variant="h4" align="center">
-            Entrar no DossiêIdoso{" "}
-          </Typography>
-        </div>
+      <Container >
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2} sx={{
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <Typography variant="h4">
+                Entrar no DossiêIdoso
+              </Typography>
+            </Grid>
 
-        <FormControl fullWidth error={!!errors.email} margin="normal">
-          <TextField
-            label="E-mail"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            error={!!errors.email}
-            helperText={errors.email}
-            fullWidth
-            InputProps={{
-              endAdornment: formData.email && (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="clear input"
-                    onClick={() => handleClear("email")}
-                    edge="end"
-                  >
-                    <CancelIcon />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </FormControl>
+            <Grid item xs={12} md={8} lg={8} >
 
-        <FormControl fullWidth error={!!errors.password} margin="normal">
-          <TextField
-            label="Senha"
-            type={showPassword ? "text" : "password"}
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            error={!!errors.password}
-            helperText={errors.password}
-            fullWidth
-            InputProps={{
-              endAdornment: formData.password && (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="Mostrar senha"
-                    onClick={handleToggleShowPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </FormControl>
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-          disabled={hasErrors}
-        >
-          Iniciar sessão
-        </Button>
-      </Box>
-      <Box>
-        <Typography variant="h6" align="center">
-          {" "}
-          Ainda não tem conta?
-          <br /> <a href="/signup">criar conta</a>
-        </Typography>
-      </Box>
-    </Container>
-    <Footer />
+              <FormControl fullWidth error={!!errors.email} margin="normal">
+                <TextField
+                  label="E-mail"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  error={!!errors.email}
+                  helperText={errors.email || " "}
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="clear input"
+                          onClick={() => handleClear("email")}
+                          edge="end"
+                        >
+                          <CancelIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={8} lg={8}>
+              <FormControl fullWidth error={!!errors.password} margin="normal">
+                <TextField
+                  label="Senha"
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  error={!!errors.password}
+                  helperText={errors.password || " "}
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="Mostrar senha"
+                          onClick={handleToggleShowPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <Visibility /> : <VisibilityOff />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={8} lg={8}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="tertiary"
+                fullWidth
+                disabled={hasErrors}
+              >
+                Iniciar Sessão
+              </Button>
+            </Grid>
+            <Grid item xs={12} md={8} lg={8}>
+              <Box>
+                <Typography variant="h6" align="center" sx={{ color: 'quaternary.contrastText' }}>
+                  <span>Ainda não tem conta?</span>
+                  <br />
+                  <Link href="/signup" sx={{ color: 'quaternary.contrastText' }} underline="always" >
+                    criar conta
+                  </Link>
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+
+
+      </Container>
+      <Footer />
     </>
-    
+
   );
 }
 

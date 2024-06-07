@@ -10,7 +10,9 @@ import {
   Typography,
   Container,
   Link,
-  Breadcrumbs
+  Breadcrumbs,
+  Avatar,
+  Grid,
 } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import CancelIcon from "components/Icons/CancelIcon/CancelIcon";
@@ -105,7 +107,7 @@ function RegisterAccount() {
 
     const validation = registerSchema.safeParse(formData);
     if (validation.success) {
-      localStorage.setItem("user", JSON.stringify({name: formData.name}));
+      localStorage.setItem("user", JSON.stringify({ name: formData.name }));
       navigate("/success-signup");
     } else {
       console.log("Erro ao preencher os dados");
@@ -114,150 +116,177 @@ function RegisterAccount() {
 
   return (
     <>
-    <MainHeader/>
-    <BreadcrumbsContainer>
-      <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="#21005D" href="/">
-          Home
-        </Link>
-        <Typography color="#21005D">Criar Conta</Typography>
-      </Breadcrumbs>
-    </BreadcrumbsContainer>
-    <Container sx={{ padding: 15 }}>
+      <MainHeader />
+      <BreadcrumbsContainer>
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link underline="hover" color="#21005D" href="/">
+            Home
+          </Link>
+          <Typography color="#21005D">Criar Conta</Typography>
+        </Breadcrumbs>
+      </BreadcrumbsContainer>
 
-      <Box component="form" onSubmit={handleSubmit} noValidate>
-        <div>
-          <Typography variant="h4" align="center">
-            Criar Conta
-          </Typography>
-          <Typography variant="h6">
-            Insira suas informações de cadastro abaixo:
-          </Typography>
-        </div>
-        <FormControl fullWidth error={!!errors.name} margin="normal">
-          <TextField
-            label="Nome do usuário"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            error={!!errors.name}
-            helperText={errors.name}
-            fullWidth
-            InputProps={{
-              endAdornment: formData.name && (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="clear input"
-                    onClick={() => handleClear("name")}
-                    edge="end"
-                  >
-                    <CancelIcon />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </FormControl>
+      <Container>
 
-        <FormControl fullWidth error={!!errors.email} margin="normal">
-          <TextField
-            label="E-mail"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            error={!!errors.email}
-            helperText={errors.email}
-            fullWidth
-            InputProps={{
-              endAdornment: formData.email && (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="clear input"
-                    onClick={() => handleClear("email")}
-                    edge="end"
-                  >
-                    <CancelIcon />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </FormControl>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2} sx={{
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <Typography variant="h4" align="center">
+                Criar Conta
+              </Typography>
+              <Typography variant="h6" textAlign={"left"}>
+                Insira suas informações de cadastro abaixo:
+              </Typography>
+            </Grid>
 
-        <FormControl fullWidth error={!!errors.password} margin="normal">
-          <TextField
-            label="Senha"
-            type={showPassword ? "text" : "password"}
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            error={!!errors.password}
-            helperText={errors.password}
-            fullWidth
-            InputProps={{
-              endAdornment: formData.password && (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="Mostrar senha"
-                    onClick={handleToggleShowPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </FormControl>
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <FormControl fullWidth error={!!errors.name} margin="normal">
+                <TextField
+                  label="Nome do usuário"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  error={!!errors.name}
+                  helperText={errors.name || " "}
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="clear input"
+                          onClick={() => handleClear("name")}
+                          edge="end"
+                        >
+                          <CancelIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </FormControl>
+            </Grid>
 
-        <FormControl fullWidth error={!!errors.confirmPassword} margin="normal">
-          <TextField
-            label="Confirmar senha"
-            type={showConfirmPassword ? "text" : "password"}
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            error={!!errors.confirmPassword}
-            helperText={errors.confirmPassword}
-            fullWidth
-            InputProps={{
-              endAdornment: formData.confirmPassword && (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="Mostrar confirmação de senha"
-                    onClick={handleToggleShowConfirmPassword}
-                    edge="end"
-                  >
-                    {showConfirmPassword ? <Visibility /> : <VisibilityOff />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </FormControl>
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <FormControl fullWidth error={!!errors.email} margin="normal">
+                <TextField
+                  label="E-mail"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  error={!!errors.email}
+                  helperText={errors.email || " "}
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="clear input"
+                          onClick={() => handleClear("email")}
+                          edge="end"
+                        >
+                          <CancelIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </FormControl>
+            </Grid>
 
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-          disabled={hasErrors}
-        >
-          Criar conta
-        </Button>
-      </Box>
-      <Box>
-        <Typography variant="h6" align="center">
-          {" "}
-          Já possui uma conta?
-          <br /> <a href="/login">Entre aqui</a>
-        </Typography>
-      </Box>
-      <Button type="submit" variant="contained" color="secondary" fullWidth>
-        Entrar com gmail
-      </Button>
-    </Container>
-    <Footer />
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <FormControl fullWidth error={!!errors.password} margin="normal">
+                <TextField
+                  label="Senha"
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  error={!!errors.password}
+                  helperText={errors.password || " "}
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="Mostrar senha"
+                          onClick={handleToggleShowPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <Visibility /> : <VisibilityOff />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <FormControl fullWidth error={!!errors.confirmPassword} margin="normal">
+                <TextField
+                  label="Confirmar senha"
+                  type={showConfirmPassword ? "text" : "password"}
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  error={!!errors.confirmPassword}
+                  helperText={errors.confirmPassword || " "}
+                  fullWidth
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="Mostrar confirmação de senha"
+                          onClick={handleToggleShowConfirmPassword}
+                          edge="end"
+                        >
+                          {showConfirmPassword ? <Visibility /> : <VisibilityOff />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </FormControl>
+            </Grid>
+
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="tertiary"
+                fullWidth
+                disabled={hasErrors}
+              >
+                Criar conta
+              </Button>
+            </Grid>
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <Box>
+                <Typography variant="h6" align="center" sx={{ color: 'quaternary.contrastText', pt: "1em" }}>
+                  <span>Já possui uma conta?</span>
+                  <br />
+                  <Link href="/login" sx={{ color: 'quaternary.contrastText' }} underline="always" >
+                    Entre aqui
+                  </Link>
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
+              <Button
+                variant="outlined"
+                sx={{ color: 'quaternary.contrastText', mt: "1em", mb: "1em" }}
+                startIcon={<Avatar sx={{ height: '1em', width: '1em' }} src={'https://cdn-icons-png.flaticon.com/128/300/300221.png'} />}
+                fullWidth>
+                Entrar com Gmail
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
+      </Container>
+      <Footer />
     </>
   );
 }
