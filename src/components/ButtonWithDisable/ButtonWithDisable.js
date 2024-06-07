@@ -11,14 +11,14 @@ function ButtonWithDisable(props) {
         "&.Mui-disabled": {
           background: "#40484C",
           color: "#ffffff",
-          marginBottom: "4em"
         },
         "&:hover": { 
           background: "#1B1736"
         },
         borderRadius: 28,
         background: "#1B1736",
-        color: "#ffffff"
+        color: "#ffffff",
+        marginBottom: "4em"
       }}>
         {props.label}
     </Button>
