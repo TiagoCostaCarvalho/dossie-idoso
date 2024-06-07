@@ -40,6 +40,7 @@ const dossieIdosoLightTheme = createTheme({
           [`&.${buttonClasses.disabled}`]: {
             opacity: 0.9
           },
+          textTransform: 'none',
         },
       },
     },

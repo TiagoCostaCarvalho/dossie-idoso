@@ -141,10 +141,10 @@ function RegisterAccount() {
             value={formData.name}
             onChange={handleChange}
             error={!!errors.name}
-            helperText={errors.name}
+            helperText={errors.name || " "}
             fullWidth
             InputProps={{
-              endAdornment: formData.name && (
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="clear input"
@@ -166,10 +166,10 @@ function RegisterAccount() {
             value={formData.email}
             onChange={handleChange}
             error={!!errors.email}
-            helperText={errors.email}
+            helperText={errors.email || " "}
             fullWidth
             InputProps={{
-              endAdornment: formData.email && (
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="clear input"
@@ -192,10 +192,10 @@ function RegisterAccount() {
             value={formData.password}
             onChange={handleChange}
             error={!!errors.password}
-            helperText={errors.password}
+            helperText={errors.password || " "}
             fullWidth
             InputProps={{
-              endAdornment: formData.password && (
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="Mostrar senha"
@@ -218,10 +218,10 @@ function RegisterAccount() {
             value={formData.confirmPassword}
             onChange={handleChange}
             error={!!errors.confirmPassword}
-            helperText={errors.confirmPassword}
+            helperText={errors.confirmPassword || " "}
             fullWidth
             InputProps={{
-              endAdornment: formData.confirmPassword && (
+              endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
                     aria-label="Mostrar confirmação de senha"
@@ -239,7 +239,7 @@ function RegisterAccount() {
         <Button
           type="submit"
           variant="contained"
-          color="quaternary"
+          color="tertiary"
           fullWidth
           disabled={hasErrors}
         >
@@ -247,14 +247,16 @@ function RegisterAccount() {
         </Button>
       </Box>
       <Box>
-        <Typography variant="h6" align="center">
-          {" "}
-          Já possui uma conta?
-          <br /> <a href="/login">Entre aqui</a>
-        </Typography>
+          <Typography variant="h6" align="center" sx={{ color: 'quaternary.contrastText' }}>
+            <span>Já possui uma conta?</span>
+            <br />
+            <Link href="/login" sx={{ color: 'quaternary.contrastText' }} underline="always" >
+              Entre aqui
+            </Link>
+          </Typography>
       </Box>
       <Button type="submit" variant="contained" color="secondary" fullWidth>
-        Entrar com gmail
+        Entrar com Gmail
       </Button>
     </Container>
     <Footer />

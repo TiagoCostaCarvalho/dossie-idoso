@@ -163,12 +163,12 @@ function LoginAccount() {
           fullWidth
           disabled={hasErrors}
         >
-          Iniciar sessão
+          Iniciar Sessão
         </Button>
       </Box>
       <Box>
           <Typography variant="h6" align="center" sx={{ color: 'quaternary.contrastText' }}>
-            <span sx={{ text: 'primary' }}>Ainda não tem conta?</span>
+            <span>Ainda não tem conta?</span>
             <br />
             <Link href="/signup" sx={{ color: 'quaternary.contrastText' }} underline="always" >
               criar conta
