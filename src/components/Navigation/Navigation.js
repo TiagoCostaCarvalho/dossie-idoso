@@ -53,7 +53,7 @@ function Navigation(props) {
       </div>
       {isLoggedIn &&
         <div className='LogoutButtonContainer'>
-          <Button onClick={(e) => {props.handleLogout()}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'16px', fontWeight:'bold'}}>Sair da minha conta</Button>
+          <Button onClick={(e) => {props.handleLogout()}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'300px', padding:'0.5rem 0', letterSpacing:'.1rem', fontSize:'1rem', fontWeight:'bold'}}>Sair da minha conta</Button>
         </div>
       }
     </div>

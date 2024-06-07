@@ -4,6 +4,7 @@ import MainHeader from '../components/MainHeader/MainHeader';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import NewTopicExampleContent from 'components/NewTopicExampleContent/NewTopicExampleContent';
 import HomeContainer from 'components/HomeContainer/HomeContainer';
+import Footer from '../components/Footer/footer';
 
 function NewTopicExample(props) {
     return (
@@ -21,6 +22,7 @@ function NewTopicExample(props) {
         <HomeContainer>
           <NewTopicExampleContent/>
         </HomeContainer>
+        <Footer />
       </>
     );
   }
