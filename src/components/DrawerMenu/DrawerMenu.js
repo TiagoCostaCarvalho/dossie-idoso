@@ -7,6 +7,8 @@ import AccessibilityButtons from 'components/AccessibilityButtons/AccessibilityB
 import Button from '@mui/material/Button';
 import Navigation from 'components/Navigation/Navigation';
 import { useNavigate } from "react-router-dom";
+import { useTheme } from '@mui/material';
+
 
 function DrawerMenu(props) {
   const isLoggedIn = props.isLoggedIn ?? false;
@@ -16,9 +18,12 @@ function DrawerMenu(props) {
 
   const navigate = useNavigate();
 
+  const theme = useTheme();
+  console.log(theme.palette.background.drawer)
+
   return (
     <Drawer open={props.open} onClose={props.onClose}>
-      <div className='Drawer'>
+      <div className='Drawer' style={{backgroundColor: theme.palette.background.drawer}}>
         <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', width:'100%'}}>
           <IconButton
               size="large"

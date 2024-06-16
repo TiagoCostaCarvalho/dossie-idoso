@@ -1,17 +1,15 @@
+// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-
 import './index.css';
-
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import dossieIdosoLightTheme from 'views/themes/dossieIdosoLightTheme';
+import { ThemeProvider as MUIThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, useTheme } from 'views/themes/ThemeContext';
 
 import {
   createBrowserRouter,
@@ -24,23 +22,24 @@ import NewEntry from 'pages/NewEntry';
 import RegisterAccount from 'views/pages/authentication/register_account/register-account';
 import SuccessRegisterAccount from 'views/pages/authentication/register_account/SuccessRegisterAccount';
 import LoginAccount from 'views/pages/authentication/login-account/login-account';
+import Button from '@mui/material/Button';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainPage/>,
+    element: <MainPage />,
   },
   {
     path: "/new-topic/",
-    element: <NewTopic/>,
+    element: <NewTopic />,
   },
   {
     path: "/new-topic/example",
-    element: <NewTopicExample/>,
+    element: <NewTopicExample />,
   },
   {
     path: "/new-topic/example/new-entry",
-    element: <NewEntry/>,
+    element: <NewEntry />,
   },
   {
     path: "/signup",
@@ -56,13 +55,25 @@ const router = createBrowserRouter([
   }
 ]);
 
+function App() {
+  const { theme, increaseFontSize, decreaseFontSize } = useTheme();
+  return (
+    <MUIThemeProvider theme={theme}>
+      <CssBaseline />
+      {/* <div style={{ padding: '10px' }}>
+        <Button onClick={increaseFontSize}>Increase Font Size</Button>
+        <Button onClick={decreaseFontSize}>Decrease Font Size</Button>
+      </div> */}
+      <RouterProvider router={router} />
+    </MUIThemeProvider>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={dossieIdosoLightTheme}>
-      <CssBaseline />
-      <RouterProvider router={router} />
+    <ThemeProvider>
+      <App />
     </ThemeProvider>
   </React.StrictMode>
 );
