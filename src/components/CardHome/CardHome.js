@@ -12,9 +12,7 @@ import Button from '@mui/material/Button';
 import { red } from '@mui/material/colors';
 
 
-export default function CardImpl(props) {
-    //props tem: title, description, imgUrl, imgAlt, cardWidth
- 
+export default function CardImpl(props) { 
  
   return (
     <Card className="cardHome" sx={{maxWidth: props.cardWidth || "200px", minWidth:props.cardWidth || "300px", minHeight: 200}}>

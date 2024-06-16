@@ -23,14 +23,40 @@ const dossieIdosoLightTheme = createTheme({
     },
     background: {
       default: "#ffffff",
-    },
-    typography: {
-      fontFamily: "Roboto, Arial, sans-serif",
+      drawer: "#6750A4",
     },
     action: {
       disabledBackground: "#40484C",
       disabled: "white",
-    }
+    },
+  },
+  typography: {
+    fontFamily: "Roboto, Arial, sans-serif",
+    fontSize: 16, // Set base font size (default is 14px)
+    h1: {
+      fontSize: '2.5rem', // Example heading size
+    },
+    h2: {
+      fontSize: '2rem',
+    },
+    h3: {
+      fontSize: '1.75rem',
+    },
+    h4: {
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontSize: '1.25rem',
+    },
+    h6: {
+      fontSize: '1rem',
+    },
+    body1: {
+      fontSize: '1rem',
+    },
+    body2: {
+      fontSize: '0.875rem',
+    },
   },
   components: {
     MuiButton: {

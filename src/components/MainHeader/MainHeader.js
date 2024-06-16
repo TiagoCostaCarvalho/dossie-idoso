@@ -38,7 +38,7 @@ function MainHeader(props) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, letterSpacing:'.2rem' }}>
+  <Box sx={{ flexGrow: 1, letterSpacing:'.2rem' }}>
     <AppBar position="static" className="MainHeader">
       <Toolbar style={{flexDirection:'column'}}>
         {isMobileSize ?
