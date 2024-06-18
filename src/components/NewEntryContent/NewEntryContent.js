@@ -37,8 +37,8 @@ function NewEntryContent() {
 
       {/* <h2>Nome</h2> */}
       <FormControl variant="outlined" sx={{ minWidth: 120, gap: "12px" }}>
-        <TextFieldWithDelete value={name} setValue={setName} label="Título da entrada" />
-        <TextFieldWithDelete value={description} setValue={setDescription} label="Descrição do entrada" />
+        <TextFieldWithDelete value={name} setValue={setName} label="Título da entrada *" />
+        <TextFieldWithDelete value={description} setValue={setDescription} label="Descrição do entrada *" />
         {/* <TextFieldWithDelete value={text} setValue={setText} label="Texto da entrada" /> */}
         <TextFieldWithDelete required={false} value={imgUrl} setValue={setImgUrl} label="Link (URL) da imagem" />
         <TextFieldWithDelete required={false} value={imgAlt} setValue={setImgAlt} label="Texto alternativo (descritivo) da imagem" />
