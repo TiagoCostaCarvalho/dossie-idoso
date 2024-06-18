@@ -22,6 +22,7 @@ import { useNavigate } from "react-router-dom";
 import BreadcrumbsContainer from 'components/BreadcrumbsContainer/BreadcrumbsContainer';
 import MainHeader from "components/MainHeader/MainHeader";
 import Footer from "components/Footer/footer";
+import { useTheme } from "@mui/material";
 
 const registerSchema = z
   .object({
@@ -114,15 +115,17 @@ function RegisterAccount() {
     }
   };
 
+  const theme = useTheme();
+
   return (
     <>
       <MainHeader />
       <BreadcrumbsContainer>
         <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="#21005D" href="/">
+          <Link underline="hover" color={theme.palette.link.main} href="/">
             Home
           </Link>
-          <Typography color="#21005D">Criar Conta</Typography>
+          <Typography color={theme.palette.link.main}>Criar Conta</Typography>
         </Breadcrumbs>
       </BreadcrumbsContainer>
 

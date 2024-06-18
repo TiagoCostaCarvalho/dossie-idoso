@@ -27,8 +27,8 @@ function NewTopicExampleContent(props) {
           flexDirection: "column",
           justifyContent: "center"
         }}>
-          <h2 className='Centered'>Em {newTopic.category.toLowerCase()}:</h2>
-          <h1 className='Centered'>{newTopic.name}</h1>
+          <h2 className='Centered' style={{color: "#000000"}}>Em {newTopic.category.toLowerCase()}:</h2>
+          <h1 className='Centered' style={{color: "#000000"}}>{newTopic.name}</h1>
         </div>
 
         <p>{newTopic.description}</p>

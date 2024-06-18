@@ -1,6 +1,6 @@
 .FooterLinks {
   background: #1B1736;
-  font-size: 1.125rem;
+  /* font-size: 1.125rem; */
   color: white;
   display: block;
 }
@@ -58,7 +58,7 @@
 .FooterBottom {
   text-align: center;
   background-color: black;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
   letter-spacing: 1.25px;
   padding-top: 2.5rem;
   padding-bottom:  1rem;

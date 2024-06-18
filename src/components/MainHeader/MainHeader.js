@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import AccessibilityButtons from 'components/AccessibilityButtons/AccessibilityButtons';
 import DrawerMenu from 'components/DrawerMenu/DrawerMenu';
 import { useNavigate } from "react-router-dom";
+import { useTheme } from '@mui/material';
 
 
 function MainHeader(props) {
@@ -36,6 +37,8 @@ function MainHeader(props) {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  const theme = useTheme();
 
   return (
   <Box sx={{ flexGrow: 1, letterSpacing:'.2rem' }}>
@@ -73,9 +76,9 @@ function MainHeader(props) {
               {!isLoggedIn && 
                 <>
                     {!isInCreateAccountPage &&
-                      <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor:'black', textTransform: 'none', width:'150px', marginRight: '40px', letterSpacing:'.1rem', fontSize:'1rem'}}>Criar conta</Button>
+                      <Button onClick={(e) => {navigate("/signup")}} variant="contained" style={{backgroundColor: theme.palette.createAccountButton.main, color: theme.palette.createAccountButton.contrastText, textTransform: 'none', width:'150px', marginRight: '40px', letterSpacing:'.1rem'}}>Criar conta</Button>
                     }
-                    <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px', letterSpacing:'.1rem', fontSize:'1rem'}}>Entrar</Button>
+                    <Button onClick={(e) => {navigate("/login")}} variant="outlined" style={{border:'solid 1px white', color:'white', textTransform: 'none',  width:'150px', letterSpacing:'.1rem'}}>Entrar</Button>
                 </>
               }
             </div>

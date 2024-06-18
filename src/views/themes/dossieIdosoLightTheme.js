@@ -17,6 +17,19 @@ const dossieIdosoLightTheme = createTheme({
     quaternary: {
       main: "white",
       contrastText: "#1B1736",
+      // main: "black",
+      // contrastText: "white",
+    },
+    createAccountButton: {
+      main: "black",
+      contrastText: "white",
+    },
+    disableButton: {
+      main: "#40484C",
+      contrastText: "#ffffff",
+    },
+    link: {
+      main: "#21005D",
     },
     error: {
       main: "#B3261E",
@@ -32,7 +45,8 @@ const dossieIdosoLightTheme = createTheme({
   },
   typography: {
     fontFamily: "Roboto, Arial, sans-serif",
-    fontSize: 16, // Set base font size (default is 14px)
+    fontSize: 20, // Set base font size (default is 14px)
+    fontWeightRegular: 400, // Default font weight
     h1: {
       fontSize: '2.5rem', // Example heading size
     },
@@ -49,7 +63,7 @@ const dossieIdosoLightTheme = createTheme({
       fontSize: '1.25rem',
     },
     h6: {
-      fontSize: '1rem',
+      fontSize: '1.25rem',
     },
     body1: {
       fontSize: '1rem',
