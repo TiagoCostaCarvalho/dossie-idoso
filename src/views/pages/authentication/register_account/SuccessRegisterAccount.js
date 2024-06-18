@@ -3,20 +3,23 @@ import { Button, Card, Container, Typography, Stack, Link, Breadcrumbs, Grid } f
 import BreadcrumbsContainer from 'components/BreadcrumbsContainer/BreadcrumbsContainer';
 import MainHeader from "components/MainHeader/MainHeader";
 import Footer from "components/Footer/footer";
+import { useTheme } from "@mui/material";
 
 function SuccessRegisterAccount() {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
+
+  const theme = useTheme();
 
   return (
     <>
       <MainHeader />
       <BreadcrumbsContainer>
         <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="#21005D" href="/">
+          <Link underline="hover" color={theme.palette.link.main} href="/">
             Home
           </Link>
-          <Typography color="#21005D">Criar Conta</Typography>
+          <Typography color={theme.palette.link.main}>Criar Conta</Typography>
         </Breadcrumbs>
       </BreadcrumbsContainer>
       <Container>
@@ -53,7 +56,7 @@ function SuccessRegisterAccount() {
           }}>
             <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
 
-              <Typography variant="h6" align="center">
+              <Typography variant="h6" align="center" color={"#000000"}>
                 Agora você pode criar e editar conteúdo para o Dossiê Idoso!
               </Typography>
             </Grid>

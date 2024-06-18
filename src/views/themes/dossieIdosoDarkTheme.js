@@ -5,7 +5,7 @@ const dossieIdosoDarkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#9585B7", // Inversão da cor principal do tema claro
+      main: "#6750A4", // Inversão da cor principal do tema claro
     },
     secondary: {
       main: "#A1A7BA", // Inversão da cor secundária do tema claro
@@ -17,6 +17,19 @@ const dossieIdosoDarkTheme = createTheme({
     quaternary: {
       main: "#1B1736", // Cor de fundo clara para textos escuros
       contrastText: "white", // Texto secundário em cor escura
+      // main: "white", // Cor de fundo clara para textos escuros
+      // contrastText: "#1B1736", // Texto secundário em cor escura
+    },
+    createAccountButton: {
+      main: "white", // Cor de fundo clara para textos escuros
+      contrastText: "#1B1736", // Texto secundário em cor escura
+    },
+    disableButton: {
+      main: "#121212",
+      contrastText: "#ffffff",
+    },
+    link: {
+      main: "#ffffff",
     },
     error: {
       main: "#FF867B", // Inversão da cor de erro do tema claro
@@ -29,8 +42,37 @@ const dossieIdosoDarkTheme = createTheme({
       fontFamily: "Roboto, Arial, sans-serif",
     },
     action: {
-      disabledBackground: "#40484C", // Cor de fundo para elementos desativados
-      disabled: "rgba(255, 255, 255, 0.5)", // Texto de elementos desativados
+      disabledBackground: "#121212", // Cor de fundo para elementos desativados
+      disabled: "white", // Texto de elementos desativados
+    },
+  },
+  typography: {
+    fontFamily: "Roboto, Arial, sans-serif",
+    fontSize: 20, // Set base font size (default is 14px)
+    fontWeightRegular: 400, // Default font weight
+    h1: {
+      fontSize: '2.5rem', // Example heading size
+    },
+    h2: {
+      fontSize: '2rem',
+    },
+    h3: {
+      fontSize: '1.75rem',
+    },
+    h4: {
+      fontSize: '1.5rem',
+    },
+    h5: {
+      fontSize: '1.25rem',
+    },
+    h6: {
+      fontSize: '1.25rem',
+    },
+    body1: {
+      fontSize: '1rem',
+    },
+    body2: {
+      fontSize: '0.875rem',
     },
   },
   components: {
@@ -42,7 +84,6 @@ const dossieIdosoDarkTheme = createTheme({
             opacity: 0.9
           },
           textTransform: 'none',
-          color: 'white', // Texto dos botões em cor clara
         },
       },
     },

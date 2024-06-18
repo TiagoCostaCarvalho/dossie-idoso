@@ -4,17 +4,20 @@ import MainHeader from '../components/MainHeader/MainHeader';
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import NewTopicContent from 'components/NewTopicContent/NewTopicContent';
 import Footer from '../components/Footer/footer';
+import { useTheme } from '@mui/material';
 
 function NewTopic(props) {
+    const theme = useTheme();
+
     return (
       <>
         <MainHeader/>
         <BreadcrumbsContainer>
           <Breadcrumbs aria-label="breadcrumb">
-            <Link underline="hover" color="#21005D" href="/">
+            <Link underline="hover" color={theme.palette.link.main} href="/">
               Home
             </Link>
-            <Typography color="#21005D">Novo Tópico</Typography>
+            <Typography color={theme.palette.link.main}>Novo Tópico</Typography>
           </Breadcrumbs>
         </BreadcrumbsContainer>
         
