@@ -1,6 +1,6 @@
 import ButtonWithDisable from 'components/ButtonWithDisable/ButtonWithDisable';
 import './NewTopicContent.css';
-import { FormControl, InputLabel, Select, MenuItem, TextField, Input, Box, Button, InputAdornment} from '@mui/material';
+import { FormControl, InputLabel, Select, MenuItem, TextField, Input, Box, Button, InputAdornment, Checkbox, FormControlLabel} from '@mui/material';
 import CancelIcon from 'components/Icons/CancelIcon/CancelIcon';
 import TextFieldWithDelete from 'components/TextFieldWithDelete/TextFieldWithDelete';
 import React, { useCallback, useEffect, useMemo } from 'react';
@@ -11,6 +11,7 @@ function NewTopicContent() {
   const navigate = useNavigate();
 
   const [name, setName] = React.useState('');
+  const [titleOnBanner, setTitleOnBanner] = React.useState(true);
   const [description, setDescription] = React.useState('');
   const [category, setCategory] = React.useState('');
   const [bannerUrl, setBannerUrl] = React.useState('');
@@ -27,16 +28,16 @@ function NewTopicContent() {
   //uso para fazer logs
   //vai fazer o que estiver dentro da função
   useEffect(() => {
-    console.log({category, name})
+    console.log({titleOnBanner})
   },
   //se algum desses valores mudar
-  [category, name]);
+  [titleOnBanner]);
 
   const submitAction = useCallback(() => {
-    const newTopic = {name, description, category, bannerUrl, bannerAlt};
+    const newTopic = {name, description, category, bannerUrl, bannerAlt, titleOnBanner};
     localStorage.setItem("newTopic", JSON.stringify(newTopic));
     navigate("/new-topic/example");
-  }, [name, description, category, bannerUrl, bannerAlt]);
+  }, [name, description, category, bannerUrl, bannerAlt, titleOnBanner]);
 
   return (
     <Box className="NewTopicContent" component="form">
@@ -44,8 +45,8 @@ function NewTopicContent() {
 
       {/* <h2>Nome</h2> */}
       <FormControl variant="outlined" sx={{ minWidth: 120, gap: "12px" }}>
-        <TextFieldWithDelete value={name} setValue={setName} label="Nome do tópico" />
-        <TextFieldWithDelete value={description} setValue={setDescription} label="Descrição do Tópico" />
+        <TextFieldWithDelete value={name} setValue={setName} label="Nome do tópico *" />
+        <TextFieldWithDelete value={description} setValue={setDescription} label="Descrição do Tópico *" />
       </FormControl>
 
       {/* <h2>Categoria do Novo Tópico</h2> */}
@@ -69,6 +70,12 @@ function NewTopicContent() {
       <FormControl variant="outlined" sx={{ minWidth: 120, gap: "12px" }}>
         <TextFieldWithDelete required={false} value={bannerUrl} setValue={setBannerUrl} label="Link (URL) do banner" />
         <TextFieldWithDelete required={false} value={bannerAlt} setValue={setBannerAlt} label="Texto alternativo (descritivo) da imagem" />
+        <FormControlLabel control={
+          <Checkbox
+            checked={titleOnBanner}
+            onChange={(e) => setTitleOnBanner(!titleOnBanner)}
+          />
+        } label="O título deve ficar sob o banner?" />
       </FormControl>
 
 

@@ -22,6 +22,7 @@ function NewTopicExampleContent(props) {
   return (
     <Box className='NewTopicExampleContent'>
       <header className='Section Bottom-Bordered'>
+      {newTopic.titleOnBanner ? (
         <div aria-label={newTopic.bannerAlt} style={{backgroundImage: newTopic.bannerUrl ? `url(${newTopic.bannerUrl})` : "linear-gradient(to right, #6750A4, #ffffff)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundColor: "#6750A4", minHeight: "300px", backgroundPosition: "center",
           display: "flex",
           flexDirection: "column",
@@ -30,6 +31,18 @@ function NewTopicExampleContent(props) {
           <h2 className='Centered' style={{color: "#000000"}}>Em {newTopic.category.toLowerCase()}:</h2>
           <h1 className='Centered' style={{color: "#000000"}}>{newTopic.name}</h1>
         </div>
+      ) : (
+        <>
+          <div aria-label={newTopic.bannerAlt} style={{backgroundImage: newTopic.bannerUrl ? `url(${newTopic.bannerUrl})` : "linear-gradient(to right, #6750A4, #ffffff)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundColor: "#6750A4", minHeight: "300px", backgroundPosition: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center"
+            }}>
+          </div>
+          <h2 style={{color: "#000000", padding: "12px 0"}}>Em {newTopic.category.toLowerCase()}:</h2>
+          <h1 style={{color: "#000000"}}>{newTopic.name}</h1>
+        </>
+      )}
 
         <p>{newTopic.description}</p>
 
