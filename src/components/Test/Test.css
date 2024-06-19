@@ -39,11 +39,11 @@
   border-radius: 64px;
   padding: 1px 24px;
   justify-content: stretch;  
-  width: 50%
+  width: 50%; 
 }
 
 .searchInput {
-  color: white;
+  color: white; 
   width: 100%;
   height: 100%;
   & .MuiInputBase-root:before, & .MuiInputBase-root:after {
@@ -70,9 +70,15 @@
   border-radius: 64px !important;
   background-color: var(--main-purple-color) !important;  
   color: white !important; 
-  width: 70%;
+  width: auto; /* Use auto width for better responsiveness */
+  max-width: 90%; /* Limit the max width */
+  padding: 12px 24px; /* Adjust padding to avoid text clipping */
+  margin: 12px auto; /* Center the button horizontally */
   cursor: pointer;
   text-transform: none;
+  overflow: hidden;
+  white-space: nowrap; /* Ensure text doesn't wrap */
+  text-overflow: ellipsis; /* Show ellipsis if text is too long */
 }
 
 .StackStyle {

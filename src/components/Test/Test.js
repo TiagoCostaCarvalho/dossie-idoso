@@ -17,7 +17,7 @@ function Test(props) {
   const [searchText, setSearchText] = useState('');
   const [selectedButton, setSelectedButton] = useState('saude'); // Default selected button
 
-  const isMobileSize = useWindowSize().width <= 700;  
+  const isMobileSize = useWindowSize().width <= 900;  
 
   const navigate = useNavigate();
 
@@ -49,8 +49,15 @@ function Test(props) {
             label="Buscar por tópicos..." 
             variant="standard" 
             InputProps={{ className: 'searchInput' }} 
-            sx={{input: {color: 'white'}, width: '100%'}}
-            InputLabelProps={{ style: { color: 'white' } }} 
+            sx={{input: {color: 'white', 
+              fontSize: '1.5em', // Tamanho da fonte
+              fontWeight: 'bold', // Aumentar contraste pela espessura da fonte  
+            }, width: '100%'}}
+            InputLabelProps={{ style: { color: 'white' }, 
+            sx: {
+              fontSize: '1.2rem', // Tamanho da fonte do label
+              fontWeight: 'bold', // Contraste do label
+            } }} 
             onChange={(e) => setSearchText(e.target.value)}/>
           <SearchIcon sx={{ color: 'white', mr: 1, mt: 2 }} />
       </Box>
@@ -80,13 +87,13 @@ function Test(props) {
       {
         //props tem: title, description, imgUrl, imgAlt, cardWidth  
         !!filteredCards ?  filteredCards.map(card => 
-          <CardHome key={card.title} title={card.title} description={card.description} imgUrl={card.imgUrl} cardWidth={300}/>
+          <CardHome key={card.title} title={card.title} description={card.description} imgUrl={card.imgUrl} imgAlt={card.imgAlt} cardWidth={300}/>
         )
         : "Sem conteúdos no momento"
       }
       </div>
     </Box>
-    <Button className={isMobileSize ? "NewTopicMobile" : "NewTopic"} onClick={(e) => {navigate("/new-topic")}} style={{fontSize: isMobileSize ? "1em" : "1.5em", margin: isMobileSize ? "12px" : "48px", padding: "12px"}} >Começar um novo conteúdo!</Button> 
+    <Button className={isMobileSize ? "NewTopicMobile" : "NewTopic"} onClick={(e) => {navigate("/new-topic")}} style={{fontSize: isMobileSize ? "1em" : "1.5em", margin: "12px auto", padding: "12px 24px"}} >Começar um novo conteúdo!</Button> 
     <Button className="topButton" onClick={scrollToTop}>
         <ArrowUpwardIcon />
         Topo
