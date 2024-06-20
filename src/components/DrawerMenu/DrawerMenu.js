@@ -39,7 +39,7 @@ function DrawerMenu(props) {
           <Logo />
           <div style={{width:'48px'}} />
         </div>
-        <AccessibilityButtons className='SideButtons' style={{marginTop:'1rem'}} />
+        <AccessibilityButtons className='SideButtons' style={{marginTop:'1rem', width:'auto'}} />
         {isLoggedIn ?
           <>
           <div className='User'>

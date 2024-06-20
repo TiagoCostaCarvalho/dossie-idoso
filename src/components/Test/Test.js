@@ -50,7 +50,7 @@ function Test(props) {
             variant="standard" 
             InputProps={{ className: 'searchInput' }} 
             sx={{input: {color: 'white'}, width: '100%'}}
-            InputLabelProps={{ style: { color: 'white' } }} 
+            InputLabelProps={{ style: { color: 'white', fontSize:'1.2rem', letterSpacing:'0.4rem', fontWeight:'500' } }} 
             onChange={(e) => setSearchText(e.target.value)}/>
           <SearchIcon sx={{ color: 'white', mr: 1, mt: 2 }} />
       </Box>
@@ -80,13 +80,13 @@ function Test(props) {
       {
         //props tem: title, description, imgUrl, imgAlt, cardWidth  
         !!filteredCards ?  filteredCards.map(card => 
-          <CardHome key={card.title} title={card.title} description={card.description} imgUrl={card.imgUrl} cardWidth={300}/>
+          <CardHome key={card.title} title={card.title} description={card.description} imgUrl={card.imgUrl} imgAlt={card.imgAlt} cardWidth={300}/>
         )
         : "Sem conteúdos no momento"
       }
       </div>
     </Box>
-    <Button className={isMobileSize ? "NewTopicMobile" : "NewTopic"} onClick={(e) => {navigate("/new-topic")}} style={{fontSize: isMobileSize ? "1em" : "1.5em", margin: isMobileSize ? "12px" : "48px", padding: "12px"}} >Começar um novo conteúdo!</Button> 
+    <Button className={isMobileSize ? "NewTopicMobile" : "NewTopic"} onClick={(e) => {navigate("/new-topic")}} style={{fontSize: isMobileSize ? "1em" : "1.5em", margin: isMobileSize ? "12px 0" : "48px 0", padding: "12px", minWidth: "300px"}} >Começar um novo conteúdo!</Button> 
     <Button className="topButton" onClick={scrollToTop}>
         <ArrowUpwardIcon />
         Topo

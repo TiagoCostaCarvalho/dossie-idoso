@@ -1,4 +1,4 @@
-import { IconButton } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import './AccessibilityButtons.css';
 import iconBoldMinus from 'assets/icons8-bold-48.png'
 import iconBoldPlus from 'assets/icons8-bold-50.png'
@@ -12,21 +12,31 @@ function AccessibilityButtons(props) {
 
   return (
     <div className={props.className} style={props.style}>
-      <IconButton aria-label='Diminuir negrito do texto' onClick={decreaseFontWeight}>
-        <img src={iconBoldMinus} alt="Letra L sem seriff em caixa alta da cor branca" />
-      </IconButton>
-      <IconButton aria-label='Aumentar negrito do texto' onClick={increaseFontWeight}>
-        <img src={iconBoldPlus}  alt="Letra L com seriff em caixa alta da cor branca" />
-      </IconButton>
-      <IconButton aria-label='Alterar contraste da página' onClick={toggleTheme}>
-        <img src={iconContrast}  alt="Círculo branco preenchido pela metade com branco" />
-      </IconButton>
-      <IconButton aria-label='Diminuir tamanho do texto' onClick={decreaseFontSize}>
-        <img src={iconFontMinus}  alt="Letra A com símbolo de menos ao lado em branco" />
-      </IconButton>
-      <IconButton aria-label='Aumentar tamanho do texto' onClick={increaseFontSize}>
-        <img src={iconFontPlus}  alt="Letra A com símbolo de mais ao lado em branco" />
-      </IconButton>
+      <Tooltip title="Diminuir negrito do texto" arrow>
+        <IconButton aria-label='Diminuir negrito do texto' onClick={decreaseFontWeight}>
+          <img style={{maxWidth:'min-content', fontSize:'1rem'}} src={iconBoldMinus} alt="Botão para diminuir negrito do texto" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Aumentar negrito do texto" arrow>
+        <IconButton aria-label='Aumentar negrito do texto' onClick={increaseFontWeight}>
+          <img style={{maxWidth:'min-content', fontSize:'1rem'}} src={iconBoldPlus}  alt="Botão para aumentar negrito do texto" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Alterar contraste da página" arrow>
+        <IconButton aria-label='Alterar contraste da página' onClick={toggleTheme}>
+          <img style={{maxWidth:'min-content', fontSize:'1rem'}} src={iconContrast}  alt="Botão para alterar contraste" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Diminuir tamanho do texto" arrow>
+        <IconButton aria-label='Diminuir tamanho do texto' onClick={decreaseFontSize}>
+          <img style={{maxWidth:'min-content', fontSize:'1rem'}} src={iconFontMinus}  alt="Botão para reduzir tamanho do texto" />
+        </IconButton>
+      </Tooltip>
+      <Tooltip title="Aumentar tamanho do texto" arrow>
+        <IconButton aria-label='Aumentar tamanho do texto' onClick={increaseFontSize}>
+          <img style={{maxWidth:'min-content', fontSize:'1rem'}} src={iconFontPlus}  alt="Botão para aumentar tamanho do texto" />
+        </IconButton>
+      </Tooltip>
     </div>
   );
 }

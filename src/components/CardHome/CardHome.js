@@ -15,7 +15,7 @@ import { red } from '@mui/material/colors';
 export default function CardImpl(props) { 
  
   return (
-    <Card className="cardHome" sx={{maxWidth: props.cardWidth || "200px", minWidth:props.cardWidth || "300px", minHeight: 200}}>
+    <Card variant="outlined" className="cardHome" sx={{maxWidth: props.cardWidth || "200px", minWidth:props.cardWidth || "300px", minHeight: 200}}>
        <CardHeader 
         title={props.title}
         sx={{minHeight:100, fontWeight: "bold"}}
@@ -31,7 +31,7 @@ export default function CardImpl(props) {
         />
       }
       <CardContent>
-        <Typography variant="body2" className="textPurple">
+        <Typography variant="body2" className="textPurple" style={{fontSize:'1rem', letterSpacing:'0.2rem', fontWeight:500}}>
           {props.description}
         </Typography>
       </CardContent>

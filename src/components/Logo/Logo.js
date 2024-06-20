@@ -9,7 +9,7 @@ function Logo(props) {
             href="/"
             rel="noopener noreferrer"
             aria-label='ir para Homepage' >
-        <img src={logo} className="App-logo" alt="círculo com um rosto sorrindo, à direita escrito Dossiê Idoso, tudo em branco" width={imageSize} />
+        <img style={{maxWidth:'min-content', fontSize:'1rem'}} src={logo} className="App-logo" alt="círculo com um rosto sorrindo, à direita escrito Dossiê Idoso, tudo em branco" width={imageSize} />
       </a>
     </div>
   );

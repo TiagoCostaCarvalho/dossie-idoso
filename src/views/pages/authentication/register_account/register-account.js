@@ -119,7 +119,7 @@ function RegisterAccount() {
 
   return (
     <>
-      <MainHeader />
+      <MainHeader user="Pedro123" isLoggedIn={false} isInCreateAccountPage={true} />
       <BreadcrumbsContainer>
         <Breadcrumbs aria-label="breadcrumb">
           <Link underline="hover" color={theme.palette.link.main} href="/">
@@ -148,6 +148,7 @@ function RegisterAccount() {
             <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
               <FormControl fullWidth error={!!errors.name} margin="normal">
                 <TextField
+                  required
                   label="Nome do usuário"
                   name="name"
                   value={formData.name}
@@ -175,12 +176,13 @@ function RegisterAccount() {
             <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
               <FormControl fullWidth error={!!errors.email} margin="normal">
                 <TextField
+                  required
                   label="E-mail"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   error={!!errors.email}
-                  helperText={errors.email || " "}
+                  helperText={errors.email || "pedro@email.com"}
                   fullWidth
                   InputProps={{
                     endAdornment: (
@@ -202,6 +204,7 @@ function RegisterAccount() {
             <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
               <FormControl fullWidth error={!!errors.password} margin="normal">
                 <TextField
+                  required
                   label="Senha"
                   type={showPassword ? "text" : "password"}
                   name="password"
@@ -230,6 +233,7 @@ function RegisterAccount() {
             <Grid item xs={12} md={8} lg={8} textAlign={"center"}>
               <FormControl fullWidth error={!!errors.confirmPassword} margin="normal">
                 <TextField
+                  required
                   label="Confirmar senha"
                   type={showConfirmPassword ? "text" : "password"}
                   name="confirmPassword"

@@ -83,7 +83,7 @@ function MainHeader(props) {
               }
             </div>
             <Logo />
-            <AccessibilityButtons className='SideButtons' style={{marginTop:'1rem'}} />
+            <AccessibilityButtons className='SideButtons' style={{marginTop:'1rem', width:'auto'}} />
           </div>
           <Navigation isMobileSize={isMobileSize} isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
         </>
