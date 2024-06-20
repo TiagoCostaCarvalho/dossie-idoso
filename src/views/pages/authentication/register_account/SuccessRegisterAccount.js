@@ -22,7 +22,7 @@ function SuccessRegisterAccount() {
           <Typography color={theme.palette.link.main}>Criar Conta</Typography>
         </Breadcrumbs>
       </BreadcrumbsContainer>
-      <Container>
+      <Container sx={{minHeight: "45vh"}}>
         <Typography variant="h6" align="center">
           Bem vindo,
         </Typography>
